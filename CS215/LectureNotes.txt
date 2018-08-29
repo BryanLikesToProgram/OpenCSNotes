@@ -1,0 +1,789 @@
+An Introduction to the Computer
+	Hertz 		A unit of measure of the processor, meaning 1 cycle per second
+	Kilohertz   1,000 hertz
+	Megahertz   1,000 kilohertz
+	Bit 		A single binary digit (1 or 1)
+	Byte 		8 bits
+	Kilobyte 	1,024 bytes
+	Megabyte 	1,024 kilobytes
+	Gigabyte 	1,024 megabytes
+	Word 		The size of a memory location expressed in bytes. The exact number varies by CPU model.
+	
+	Questions?
+	x/2 & Shift Right
+	
+	1. Computer Languages
+		Machine Language
+			Binary Codes
+			Hardware Specific
+			
+			10010001 01000001
+			10010010 01000010
+			01010000
+			10100010 01000011
+		Assembly Language
+			Text codes for simple commands
+			Codes differ based on cpu hardware
+			1-to-1 to machine language
+			
+			MOV @065 to CPU:R1
+			MOV @066 to CPU:R2
+			ADD
+			MOV CPU:REG3 to @067
+		High Level Language
+			Text codes for complex commands
+			Standardized across cpu models (Non hardware Specific)
+			
+			x = a + b
+	2. Software Tools
+		Editor
+			used to write the program in a HLL.
+		Compiler
+			translates program in a HLL into Machine (or other low level) Language
+		Linker
+			combines Object Files into an Executable.
+		Loader
+			copies an Executable into memory and
+			starts program execution.
+		Integrated Development Environment (IDE)
+			Combines the editor, compiler, linker, loader and
+			often other helpful tools into one programming tool.
+	3. Errors
+		Syntax
+			found in the Source, these are violations of the rules for writing
+			programs in the HLL.
+		Link
+			the linker is unable to link the object files
+			into an executable. Typical errors indicate
+			something is missing or the parts (objects) do
+			not “fit” together as expected.
+		Load
+			the loader is unable to copy the executable into memory and start execution.
+			Typical errors include “not enough memory” or “not a trusted program” (virus protection).
+		Run-Time
+			occurs during execution. Typical errors include “division by 0”, “file not found”,
+			“memory access violation”. Execution halts when a RTE occurs; normally called a “program
+			crash” and may not have an error message.
+		Logic (Semantic)
+			when there is no error from the perspective of the computer, but rather the
+			program does something unexpected by the user.
+		Bug
+			Informal name for the Logic/Run-Time error
+	4. Data Types
+		Integer
+			numbers without a decimal point
+		Float
+			numbers with a decimal point
+		Character
+			a single character
+		String
+			a sequence of 0 or more characters
+	5. Categories of Words
+		Reserved Words (Keywords)
+			Words that already have a defined meaning in C++
+			(including operators and symbols)
+			Ex. string, int, char, long
+			Ex: + * / < <= << >> ( [
+		Identifiers
+			Words that are created and defined by
+			the programmer (variable + funct Names)
+				Rules
+					Must start with a letter
+					The remainder may be letters, digits or the underscore (_)
+						Note: that means no spaces
+					Identifiers are Case Sensitive
+		Literals
+			a data value with an implied data type
+		Escape Characters
+			Inside quotation marks (literals)
+			Characters are identified by a backslash \ followed by a single character
+				The single character indicates which special character
+			Together these two characters are interpreted as one character
+			\n Newline (go down to the next line)
+			\t Tab
+			\’ Single Quote (needed inside a char literal)
+			\” Double Quote (needed inside a string literal)
+			\\ Backslash
+		Comments
+			Block Comment: anything between /* and */
+				May include multiple lines.
+			Line Comments: anything after // to the end of the line
+		Compiler Directives
+			Purpose: to direct the compiler to do something with the Source code before translation begins.
+			Start with # followed by a pre-defined word (no space), usually followed by something more.
+				#include <iostream>
+				#include instructs the compiler to “copy/paste” a file into the Source code. 
+				It is followed by the name of the file.
+				When the file name is between < arrows >, this means “look in the C++ standard library
+C++ Specific Commands
+	<iostream>
+		Cout 
+			Print Screen in C++ console App
+				use <iomanip> for formatting utilities
+			Stream from the application (executing from memory) to the screen
+			Characters are "inserted" into the stream and fall out onto the screen
+				I/O manipulations may be used to format the characters before they are written
+		Cin
+			Read user input from keyboard in C++ Console App
+		getLine
+			Similar to Cin, but allows use of spaces
+				cin.ignore();
+				getline(cin, variable);
+			
+Data Types Extended
+	_______________________________________________________
+	|					                              	Integer vs Float?												               |			
+	|----------------------------------------------------------------------------------------|
+	| *Consideration*		*Integer*				     *Float*	                               |
+	|   Increasing Size			Increases Range	 Increases # of sig digits        |
+	|   Arithmetic 		                Fast & Easy			     Slow & Complicated		  		   |
+	|   Precision						Always Precise		     Imprecise due to max digits   |
+	|   Range 								Limited (small) 	         Unlimited (practically)		       |
+	-----------------------------------------------------------------------------------------
+		*Use Int when increased Range is needed (Larger Numbers), Float for increased precision(# of sig digits)
+	Type		 Size			Range
+				(bytes)	   	   (signed)	  
+	Short 		   2		  +/- 32,767
+	Int			   4		  +/- 2 bil
+	Long		   4		  +/- 2 bil
+	Long Long	   8		  +/- 9*10^18
+	*64 bit cpu, varies by model/word size*
+	
+				Float Types
+							  (Sig digits)
+	Float 			4				7
+	Double 			8				15
+		*Floats Can't be Unsigned*
+	*All floats are stored in scientific notation*
+	
+		to set precision (decimal place)
+		#include <iomanip>
+		cout << fixed << setprecision(2);
+		
+		Mantissa
+			Digits with assumed radix pt after first digit
+			Exponent of 2 in Binary
+			Ex.	
+				1234.567 = 1.234567*10^3
+				Mantissa = 1234567 	Exponent = 3
+				
+		Scientific Notation
+			Addition (How computers add floating pt numbers)
+				1.234567 * 10^4
+			   +7.654321 * 10^2
+			   ---------------- (Exponents Must Match)
+				 |			|
+				 v 			v 
+			  123.456700 * 10^(2)
+			   +7.654321 * 10^2
+			   ---------------- (Add the Mantissas, keep the common exponent)
+			  131.110321 * 10^2
+			  1.31110321 * 10^4 (Convert back to Scientific Notation)
+			  1.311103	 * 10^4 (Round off to 7 Digits)
+Character Types
+	Char
+		Exactly one character
+	String	
+		Sequence of 0 or more characters
+		Not native to C++ must #include <string>
+Variables
+	Container for data, includes
+		Name
+			Identifier, created by programmer
+		Type
+			Describes data values and operations
+		Contents
+			Change during execution of program
+		*Assigning int to long will truncate long, NOT ROUND*
+Arithmetic
+	Single type operations (int/int) results in that type (int)
+	Mixed type operations (int/float) results in float
+	Squareroot x -> sqrt(16);
+	Square x -> pow(x,2);
+	Round x -> round(x);
+	Round x to 2nd decimal place -> round(3.14159 *100) / 100; (3.14)
+	Remainder 7/2 -> 7%5 (modulus, remainder = 2) 
+Constants
+	const double x = .06;
+	Why?
+		Clarity
+		Consistency
+		Maintainability
+	Typically declared w/ caps and Underscore
+	const string HELLO_WORLD = "hello world"
+Loops 
+	While Loops
+		Counter Controlled Loop
+			int i = start;
+			while (i <= stop){
+				i+= increment;
+			}
+		User Input Validation
+			int answer = wrongAnswer
+			while (answer = wrong){
+				cout << "Enter right answer"
+				cin >> answer
+			}
+		User Input Validation V2
+			string answer = "";
+			while (answer != "left" && answer!= "right"){
+				cout << "Enter left or right: ";
+				cin >> answer;
+				if (answer != "left" && answer != "right"){
+					cout << "Invalid Amswer!";
+				}
+			}
+		Summation Loop
+			int num, sum = 0;
+			while (conditional){
+				cout << "Enter number: ";
+				cin >> num;
+				sum += num;
+			}
+			cout << count << " Numbers entered";
+			
+		Average of Inputs
+			float num, sum = 0, average;
+			int cout = 0;
+			while (any control){
+				cout << "Enter Number: ";
+				cin >> num;
+				count++;
+				sum += num;
+			}
+			average = sum/count;
+		
+		Mini
+			int min = 32,767; //Max range for signed int
+			while (conditional){
+			cout << "Enter number: ";
+			cin >> num;
+			if (num < min)
+				min = num;
+			}
+		Max 
+			int max = −32,768; //Min range for signed int
+			while (conditional){
+				cout << "Enter number: ";
+				cin >> num;
+				if (num > max)
+					max = num;
+			}
+		Sentinel Controlled Loop 
+			int score, sum = 0;
+			cout << "Enter score, -1 to quit: ";
+			cin >> score;
+			while (score != -1){
+				sum += score;
+				cout << "Enter Score, -1 to quit: ";
+				cin >> score;
+			}
+			cout << "The sum is " << sum << endl;
+	Do-While
+		do{
+			body
+		} while (conditional);
+Arrays 
+	type identifier [size];
+		size must be constant or variable
+	int score [15];
+	 ex.
+		adding all user inputs while saving each
+		const int NUM_TEMP = 20;
+		double sum = 0, temp[NUM_TEMP], avg;
+		for (int i = 0; i < NUM_TEMP; i++){
+			cout << "Enter a temp: ";
+			cin >> temp[i];
+			sum += temp[i];
+		}
+		avg = sum / NUM_TEMP;
+	Partial Array
+		1. Array	
+		2. Max number of elements
+		3. Number of elements
+	Array Sorts	
+		Bubble 
+			for (int i = 0; i < num - 1; i++){
+				for (int j = i +1; j < num; j++){
+					if (a[i] > a[j]) {
+						//Swap a[i] w/ az[j]
+						double t = a[i];
+						a[i] = a[j];
+						a[j] = t;
+					}
+				}
+			}
+	Parralel Arrays
+		allows for Multi-Datatype Arrays 
+		
+		const int MAX = 4;
+		string name[MAX];
+		int id[MAX];
+		double gpa[MAX];
+		
+		name[0] = "Alice";	id[0] = 12345;	gpa[0] = 2.7;
+		name[1] = "Bob";	id[1] = 98798;	gpa[1] = 3.1;
+		name[2] = "James";	id[1] = 45678;	gpa[2] = 3.7;
+		name[3] = "Trey";	id[1] = 19678;	gpa[3] = 3.5;
+		
+Functions
+	Invoaction Semantics
+		For each PBV (no &) arg
+			1. Formals are allocated
+			2. Actuals are evaluated
+			3. Values of actuals are copied to formals
+			(Actual value copied to formal)
+		For each PBR (w/ &) arg
+			1. Formals RENAME corresponding actuals
+			2. Must be a single variable of exact same type
+			(Are allocated)
+	int Main(){
+	
+	}
+	return 0;
+	applicable for all computers/compilers, xcode doesnt support void main()
+File I/O
+	#include <fstream>
+		must be opened before read/write
+		must be closed (memory leak, used by other program error)
+		ofstream 
+			f.open("mydata.txt");
+				used to write to a text file	
+				WILL DELETE CONTENTS OF FILE IF IT EXISTS
+				w/o path in file name, it assumes file is in working directory
+					f.open("c://datafiles//racic//mydata.txt"); 
+					or
+					string fn = "c://datafiles//racic//mydata.txt";
+					f.open(fn);
+					use double backslashes, otherwise considered escape character
+					can also cin, (no double backslahes necissary)
+		ifstream
+		
+Project 2 notes
+		put txt file in resources in visual studio
+		ifstream f;
+		f.open("accounts.txt");
+		if (f.fail()){
+			cout << "File failed to open \n";
+			return 0;
+		}
+		
+		int num;
+		string acct, pin, bal;
+		f >> num;
+		for (int i = 0; i < num; i++){
+			f>>acct[i] >> pin[i] >>bal[i];
+		}	
+		need partial array
+			
+Global Variables	
+	Masking
+		When a local identifier has the same name as a global identifier or Less Local (oll)
+Black Magic
+	Continue
+	Break 
+	Goto
+	(Return in the middle of a function)
+Recursion
+	When a function invokes itself
+	
+	Non Recursive 
+		Break problem into smaller problems
+		Solve small problems
+		Combine small solutions into one big solution
+	EX.
+		Calc Factorial
+			when n = 0 return 1
+				n < 0 return null
+				
+			Non Recursivity (Python)
+				int fact(int n){
+					int f;
+					if (n < 0)
+						f = null;
+					else if (n == 0)
+						f = 0;
+					else {
+						f = 1;
+				for (int i = 1; i <= n; i++){
+					f = f*i;
+					}
+				}
+				return f;
+			}
+			Non Recursivity (C)	
+				int fact(int n){
+					int f = 1;
+					if (n <= 0) 
+						return null;
+					for (int i = 1; i <=n; i++){
+						f = f*i;
+					}
+					return f;
+				}
+			Recursive (Python)
+				int fact(int n ){
+					int f;
+					else if (n == 0)
+						f = 1;
+					else
+						f = n*fact(n-1);
+					return f;
+				}
+			Recursive (C++)
+				int fact (int n){
+					if (n < 0)
+						return null;
+					if (n ==0)
+						return 1;
+					return (n*fact(n-1));
+				}
+OOP (object oriented programming)
+	Object
+		Contains
+			Data Elements
+			Operations
+		Declaration
+			void funstuff(){
+				double a,b,c;
+					//Orig data type
+				fraction f1,f2,f3;
+					//Allocate 3 obj of class fraction
+				
+			}
+		Accessing Members
+			Dot Operator
+				object.publicMember
+				object.publicMethod()
+		
+	Class
+		Description of an object 
+		class is to obj as type is to variable
+			Name
+			List of Data Members
+			List of Methods
+			Access Levels on each Member/Method	
+		Essentially new Data Type, but more complex, therefore called a class
+		Declaration
+			Interface
+				Declarative, written in a .h file
+			Implementation
+				Function member declarations usually written in a cpp
+		class {
+			public:
+				public data members
+				public function member prototypes
+			private:
+				private data members
+				private function member prototypes
+		};
+		Data Member Declaration
+			class customer {
+			public:
+				string firstname, lastname;
+			private:
+				int age;
+				float shoesize;
+			};
+		Function Member Prototype
+			class name {
+			public: 
+				void print (int x);
+			private:
+				int getStuff();
+				float calcStuff(float x, float y);
+			};
+		Interface Syntax
+			class fraction{
+			public: 
+				void setNumer(int n);
+				void setDenom(int d);
+				int getNumer();
+				int getDenom();
+				float getDecimal()'
+			private:
+				int numer, denom;
+			};
+		Implementation Syntax
+			returnType className :: funMemName(args){
+			
+			}
+			Ex.
+			void fraction :: set(int n, int d){
+			
+			}
+			void fraction :: getNumer(){
+			
+			}
+			void fraction :: getDenom(){
+			
+			}
+			void fraction :: getDecimal{
+			
+			}
+			void fraction :: reduce(){
+			
+			}
+			W/in all function members of a class, all data members have Global Scope
+				But they can be masked!
+			EX.
+				void fraction::set(int n, int d){
+					numer = n;
+					denom = d;
+				}
+				float fraction::getDecimal(){
+					float dec = (1.0 * numer)/denom;
+					return dec;
+				}
+		Free Function 
+			Not a method of a class (No classname)
+				int function(args){
+				}
+	Constructors
+		class fraction {
+			public: fraction();
+			private: int numer; int denom;
+		};
+		fraction::fraction(){
+			numer = 0;
+			denom = 1;
+		}
+		
+		void main(){
+			fraction f;			//Constructor exe now
+								//f.numer = 0, f.deom = 1
+			fraction fr[3];		//5 constructor exe now
+								//fr[0].numer = 0, fr[0].denom = 1;
+								//fr[1].numer = 0, fr[1].denom = 1;
+								//fr[2].numer = 0, fr[2].denom = 1;
+		}
+	get() set()
+		All Data Members should be private
+			use set() & get() to controll access
+		get()
+			class fraction{
+				public: int getNumer();
+				private: int numer;
+			}
+		set()
+			class fraction{
+				public: void setDenom(int newDen);
+				priabte: int denom;
+			}
+			void fraction::setDenom(int newDen){
+				if(newDen > 0){
+					denom = newDen;
+				}
+			}
+	Full Ex
+		fraction.h
+			class fraction {
+				public:
+					fraction();
+					void setNumer(int n);
+					void setDenom(int d);
+					int getNumer();
+					int getDenom();
+				private:
+					int numer, denom;
+				};
+		fraction.cpp	
+			fraction::fraction() { numer=0; denom=1; }
+			int getNumer() { return numer; }
+			int getDenom() { return denom; }
+			
+			void setNumer(int n){ numer = n; }
+			void setDenom(int d) {
+				if (d > 0) {
+				denom = d;
+				}
+			}
+List (Linked List) 
+	-A data structure that uses only the amount of memory needed for the number of elements in use at a given point in time.
+	-no maximum number of elements
+	-no waste of memory for unused elements.
+	-Ais a linear, dynamically-allocated data structure. It consists of a 
+	Head
+		pointer to a node. 
+		points to the first element of the list
+		or is NULL when the list is empty.
+	Next 
+		pointer of each node points to the next node in the list
+		except the last node, where NEXT is NULL.
+	Node
+		-is a dynamically allocated list element, implemented as a structure that has at least two members:
+		Key
+			a (usually) unique identifier for an element
+		Next
+			a pointer to a node.
+			
+		class node {
+			friend class LList;
+			private:
+				int key;
+				node * next;
+					//Circular reference is okay
+		}
+		class LList {
+			private: node * head;
+		}
+		
+		Looping
+		
+		node * p = head; 
+		while (p != NULL) {
+			...
+			p = p ->next;  
+		}
+		
+		Constructors
+		
+		node::node() { 
+			key = 0;
+			next = NULL;  
+		}
+		LList::LList() {
+			head = NULL;
+		}
+		
+		Print
+		
+		void LList::print() {
+			node * p = head;
+			while (p != NULL){
+				cout << p ->key << " ";
+				p = p-> next;
+			}
+		}
+		
+		Insert
+		
+		void LList::insert(int newkey) {
+			node * n = new node; 
+			n ->key = newkey;
+			n ->next = NULL;    
+			insert(n);
+		}
+		
+		void LList::insertAfter(node* after, node* n) {
+			if (head == NULL || after == NULL) {
+				n ->next = head; 
+				head = n;       
+			}else {       
+				n->next =  after->next;
+				after->next =  n;
+			}
+		}
+		
+		Remove
+		
+		void LList::remove(node * r){
+			if (r == head){
+				head = head->
+			}else {
+				node * b4 =head;
+				while(b4>{ b4 ->->next != r){
+					b4 = b4-next;
+				}
+				b4->next = r->next;
+			}
+			r->next = NULL;
+				//Detach following node
+		}
+		
+		Defensive remove
+		
+		void LLis::remove(node * r){
+			if (head == NULL) return;
+			if (r==NULL) return;
+			if (r == x.head){
+				x.head = x.head -> next;
+			}else{
+				node * b4 = x.head;
+				while (b4 -> next !- r && b4 != NULL){
+					b4 = b4 -> next;
+				}
+				if (b4 == NULL) return;
+				b4 -> next = r-> next;
+			}
+			r - > next = NULL;
+		}
+		
+		Remove, invocation
+		
+		void LList::fun(){
+			node *p;
+			p = ptr to node to remove;
+			remove (p);
+			cout << p ->key << "was removed"
+			delete p; //deallocate removed node
+		}
+		
+		Length
+		
+		void LList::length(){
+			int num = 0;
+			node * p = head;
+			while (p != NULL){
+				num++;
+				p = p -> next;
+			}
+			return num;
+		}
+		
+Dot operators, Pointers, and Object Arrays
+	class frac{
+	public: 
+		int num, den;
+	}
+	********************************************************
+	void main(){
+		frac f, g, h;
+		g.num = 6;
+			//left of dot must be obj
+			//right must be data member (public) or method
+	}
+	********************************************************
+	void main(){
+		frac f[3];
+			//now a pointer
+		frac f[0].num = 3;
+		//cannot f.num = 3;
+	}
+	********************************************************
+	void main(){
+		frac *f;
+			//not a frac, nor array of frac, pointer to frac
+		f = new frac;
+			//cannot f.num = 3
+		f -> num = 3;
+			//Left of arrow is pointer, right of arrow is public data member or method
+		f = new frac[3];
+			//creates array of 3 pointers of frac
+	}
+Stack 
+	Linear-list data structure, element transactions is restricted to first element of the list
+	LIFO
+		Last In First Out
+	Top
+		The first element of the list
+	Push 
+		Add a new element to the top of the stack
+	Pop 
+		Remove an element from the top of the stack
+Queue
+	Liner-list data structure, addition is restricted to the end of te list, removal is restricted to the first
+	FIFO 
+		First In First Out
+	Front
+		first element in queue
+	Rear
+		last element in queue
+	Enqueue
+		add a new element to end of queue
+	Dequeue 
+		remove an element from the front of the queue
+
+	
+	
+		

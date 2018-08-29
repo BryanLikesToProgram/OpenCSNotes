@@ -1,0 +1,284 @@
+------------------------------------------------------
+ Definitions
+------------------------------------------------------
+	¬ (Negation Proposition) (1)
+	∧ (Conjunction of Proposition) (1)
+	∨ (Disjunction of a Proposition) (1)
+	⊕ (Exclusive Or) (1)
+	⟶ (Conditional Statement) (1)
+	¬⟶¬ [⟵] (Converse Statement) (1)
+	⟷ (Biconditional Statement) (1)
+	≡ (Logical Equivalence) (1)
+	ᗄ (Universal Quntifier) (1)
+	∃ (Counterexample of a Universal Quntifier) (1) 
+	∴ (Therefore) (1)
+
+------------------------------------------------------
+
+Foundations of Logic & Proof
+	Proposition 
+		Declarative statement, True or False, but never both
+	Propositional Calculus
+		logic that deals w/ propositions
+		Predicates 
+		"x is greater than 5"
+		x is SUBJECT of statement
+		"is greater than 5" is the PROPERTY the subject of the statement can ha∨e
+		P(x), P: predicate, x is ∨ariable
+		P(x) ∨alue of propositional function P at x
+		once x has been assigned a ∨alue, P(x) becomes a proposition and has a truth ∨alue
+				Ex.
+				P(x) = "x > 100"
+				P(x): x < 100
+				P(5): 5 < 100, True
+	Theorem
+			Statement thta can be shown to be true
+		Proof
+			∨alid arg that establishes the truth of a Theorem
+		Lemma
+			Result thta is pro∨ed to help in pro∨ing a Theorem
+		Corollary
+			Theorem that can be established directly from a Theorem that has been pro∨en
+		Conjecture
+			Statement that is being proposed to be a true statement, usually based on some partial e∨idence
+				 Famous Conjectures
+					Fermat's Last Theorem:
+						X^n + Y^n = Z^n 
+						No nontrivial solution in the set of integers if n > 2
+					Four Color Conjecture
+						Planar graph is four colorable
+	E∨en Integer
+		n is e∨en if there exists an integer k such that n = 2k
+	Odd Integer
+		n is odd if there exists an integer k such that n = 2k+1
+		
+Propositions	
+	| p | q | ¬p | ¬q | p∧q | p∨q | p⟶ q |  p⊕q | p⟶q |  ¬p⟶¬q  |  p⟷q |
+	  T   T    F    F        T       T           F           F              T              T               T
+	  T   F    F    T        F       T           T           T               F              T               F
+	  F   T    T    F        F       T           T           T               T              F               F
+      F   F    T    T        F       F           T            F               T              T               T
+	Negation of a Proposition (NOT) ¬
+		is denoted by ¬p of proposition p
+		ALWAYS applied before any other operators
+	Conjunction of a Proposition (AND T ; OR)∧ 
+		True if both propositions are True
+	Disjunction of a Proposition (NOT AND F; AND) ∨
+		False if both propositions are false, true otherwise
+	Exclusive Or of a Proposition (T OR  T; XOR) ⊕
+		True if exactly one proposition is true 
+	Conditional Statement  (!T AND F) ⟶
+		 False if first prop is true and second prop is false
+	Converse Conditional Statement (!F AND T)  [⟵] ¬⟶¬
+		False if first prop is false and second prop is true
+		q ⟶p & ¬p ⟶ ¬q are equivalent (have same values)
+	^Also known as Proof by Contradiction
+	Biconditional Statement (==) ⟷
+		True if both propositions have the same values
+	Compound Propositions
+		Formed from existing propositions
+				Ex. (p∨¬q) ⟶ (p∧q)
+				(p∨¬q)
+				| p | q | ¬q | p∨¬q |
+				  T   T    F        T
+				  T   F    T        T
+				  F   T    F         F
+				  F   F    T         T
+				  (p∧q)
+				| p | q | p∧q | 
+				  T   T      T
+				  T   F       F
+				  F   T       F
+				  F   F       F
+				 (p∨¬q) ⟶ (p∧q)
+				 | p | q | p∨¬q | p∧q | (p∨¬q) ⟶ (p∧q) |
+				   T   T       T          T                      T
+				   T   F       T          F                       F
+				   F   T       F          F                       T
+				   F   F       T          F                       F
+		Order of Logical Operations
+			 ¬, ∧, ∨, →, ↔
+		Logical Equivalencies  ≡
+			 Tautology
+				Compound proposition that is always T
+						EX. (p∨¬p) 
+						| p | ¬p | p∨¬p |
+						  T    F        T
+						  F    T        T
+			 Contradiction
+			   Compound proposition that is always F
+						EX. (p∧¬p) 
+						| p | ¬p | p ∧¬p |
+						  T    F        F		
+						  F    T        F				 
+				(Tautology & Contradiction EXs are DeMorgan's Laws)
+			 Contingency
+				Compound proposition that is neither tautology nor contradiction
+				
+Applications of Propositional Logic
+	Gates
+		Inverter 
+			p ->  |=>  ->  ¬p 
+		OR Gate
+			p -> )--\  -> p∨q
+			q -> )--/
+		AND Gate
+			p -> |--)  -> p∧q
+			q -> |--)
+		
+Laws
+	Associative Laws
+		(p∨q)∨r ≡ p∨(q∨r)
+		(p∧q)∧r ≡ p∧(q∧r)
+	Distributed Laws
+		p∨(q∧r) ≡ (p∨q)∧(p∨r)
+		p∧(q∨r) ≡ (p∧q)∨(p∧r)
+	De Morgan's Laws
+		¬(p∧q)≡¬p∨¬q
+		¬(p∨q)≡¬p∧¬q
+		
+Quantification (predicate calculus)
+	Create a proposition from a function w/o needing to assign values to variables (Similar to domain)
+	"P(x) for all values of x in the domain"
+	When a quantifier is used on a variable it becomes "Bound", otherwise that variable is "Free"
+		All variables that occur in a propositional function must be bound or have a variable to become a proposition
+	Universal quantification  ∀
+			all values that are true in a certain domain
+			∀xP(x)  True: P(x) is true for every x. False: There is an x for which P(x) is false (provable by counterexample)
+					Ex. (x + 1 > x)
+					P(x) is true for all real #'s, therefore the quantification is True
+					(x < 2)
+					P(x) is not true for all real #'s (P(3)), therefore the quantification is False
+	Counterexample (Existential Quantifier) ∃
+		all values that are false in a certain domain
+		"an element for which P(x) is false is a counter example of ᗄxP(x)"
+		∃xP(x)  True: There is an x for which P(x) is true.  False: P(x) is false for every x.
+	It's assumed all domains of quantifiers exist
+		If one is empty, then ∀xP(x) is true for any propositionalfunction P(x) 
+		because there are no elements x in the domain for which P(x) is false.
+	Uniqueness Quantifier
+		There exists exactly one unique number/quantifier
+		"There exists a unique x such that P(x) is true"
+	Order of Quantifiers
+		∀x∀yP(x,y): P(x, y) is true for every pair x, y
+		∃x∃yP(x,y) : There is a pair x,y for which P(x, y) is true
+		∀x∃yP(x,y): For every x there exists y for which P(x, y) is true
+		∃y∀xQ(x,y): There is an x for which P(x, y) is true for every y
+		∀x∀y∃zQ(x,y,z): There is a z such that for all x and all y is true
+				Ex. (x+y = y+x)
+					∀x∀yP(x,y) and ∀y∀xP(x,y)?
+					P(x, y) is true for all real numbers. Therefore both are true (Both also mean the same thing)
+				
+					(x+y = 0)
+					∀x∃yQ(x,y)?
+					Given a real number x , there exists a real numbery y ( -x) such that x+y = 0.
+					Therefore ∀x∃yQ(x,y) is true.
+Rules of Inference - Propositional Logic
+	A compressed format for specifc Tautologies, used for showing an argument is valid
+	∧ : seperate lines
+	→ : "Horizontal bar"
+	∴ : therefore
+	Modus ponens
+		Tautology: (p∧(p→q))→q 
+		Rule of Infrence:
+			p
+			p→q
+		∴ ------
+			 q
+	Modus tollens
+		Tautology: (¬q∧(p→q))→¬p 
+		Rule of Infrence:
+		¬q
+		p → q
+	∴ ------
+		 ¬p
+	Hypothetical syllogism
+		Tautology: ((p→q)∧(q→r))→(p→r) 
+		Rule of Infrence:
+		p → q
+		q → r
+	∴ ------
+		p → r
+	Disjunctive syllogism
+		Tautology: ((p∨q)∧¬p)→q 
+		Rule of Infrence:
+		p ∨ q
+		¬p
+	∴ ------
+	     q
+	Addition
+		Tautology: p→(p∨q) 
+		Rule of Infrence:
+		p
+	∴ ------
+		p ∨ q
+	Simplification
+		Tautology: (p∧q)→p 
+		Rule of Infrence:
+		p ∧ q
+	∴ ------
+		p
+	Conjunction
+		Tautology: ((p)∧(q))→(p∧q) 
+		Rule of Infrence:
+		p
+		q
+	∴ ------
+		p ∧ q
+	Resolution
+		Tautology: ((p∨q)∧(¬p∨r))→(q∨r) 
+		Rule of Infrence:
+		p ∨ q
+		¬p ∨ r
+	∴ ------
+		q ∨ r
+Rules of Infrence - Quantified Statements
+	Univesal Instantiation
+		P(c) is true , c is a specific member of the domain ∀xP(x)
+			"I love berries!" -> blueberries are berries, therefore I love blueberries
+		Rule of Infrence
+		Proof of ∀xP(x) 
+			∀xP(x)
+		∴ ------
+			P(c)
+	Universal Generalization
+		"∀xP(x) is true because P(c) is true for all elements c in the domain"
+			Under this assumption, we can choose an arbitrary c to prove P(c) to prove ∀xP(x)
+	Rule of Infrence
+			P(c) for an arbitrary c
+		∴ ------
+			∀xP(x)
+	Existential Instantiation
+		Rule of Infrence
+			∃xP(x)
+		∴ ------
+			 P(c) for some element c
+	Existential Generalization
+		Rule of Infrence
+			P(c) for some element c
+		∴ ------
+			 ∃xP(x)
+Proofs (Methods for pro∨ing theorems)
+		Direct Method (forward proof)
+			proof of a conditonal statement p ⟶ q is constructed where the first step is the assumption that p is true
+			subsequent steps are construtcted using the rules of inference, w/ the final step showing q must be true
+		Proof by Contraposition
+			to prove p ⟶ q we prove ¬p⟶¬q
+		Proof by Contradiction
+			to pro∨e statement p is true, we asssume p is not true and arri∨e at contradiction
+
+	
+		
+Intro to Logic, Mathmatical Proofs
+	Direct Proofs
+	Proof by Contradiction
+	Proof by Contraposition
+	Proof by Cases
+	...
+Sets & Functions
+
+Counting, Recursion,& Probability
+
+Relations
+
+Graphs
