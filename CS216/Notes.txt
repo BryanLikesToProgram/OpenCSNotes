@@ -27,26 +27,6 @@ UNIX/Linux
 			GNU/Linux
 				Ubuntu used in the CS dept for server dev
 			MacOS X
-	Openstack
-		Popular cloud computing project
-		VM (Virtual Machine) used for CS216
-			Always test on VM before submission for benefit of TA
-		Dashboard
-			Web interface used to access VM console
-		OpenStack instance
-			Term for VM
-		Access
-			use linkblue ID & password
-			controller.netlab.uky.edu
-			"Instances"
-				instance name (linkblue ID)
-				"Instance Console"
-					enter linkblue ID & pass to continue
-			PUTTY or other ssh software
-				Hostname = linkblue id.netlab.uky.edu 
-				Port: 22
-					login as: linkblue ID
-					password: type linkblue password (UNIX does not display characters in password field)
 	Terminal 
 		Default terminal is Bash	
 		Shell

@@ -15,6 +15,8 @@
 
 ------------------------------------------------------
 
+|1.1-1.6|
+
 Foundations of Logic & Proof
 	Proposition 
 		Declarative statement, True or False, but never both
@@ -53,11 +55,11 @@ Foundations of Logic & Proof
 		n is odd if there exists an integer k such that n = 2k+1
 		
 Propositions	
-	| p | q | ¬p | ¬q | p∧q | p∨q | p⟶ q |  p⊕q | p⟶q |  ¬p⟶¬q  |  p⟷q |
-	  T   T    F    F        T       T           F           F              T              T               T
-	  T   F    F    T        F       T           T           T               F              T               F
-	  F   T    T    F        F       T           T           T               T              F               F
-      F   F    T    T        F       F           T            F               T              T               T
+	| p | q | ¬p | ¬q | p∧q | p∨q |  p⊕q | p⟶q |  ¬p⟶¬q  |  p⟷q |
+	  T   T    F    F        T       T           F          T              T               T
+	  T   F    F    T        F       T           T           F              T               F
+	  F   T    T    F        F       T           T          T              F               F
+      F   F    T    T        F       F           F          T              T               T
 	Negation of a Proposition (NOT) ¬
 		is denoted by ¬p of proposition p
 		ALWAYS applied before any other operators
@@ -282,3 +284,215 @@ Counting, Recursion,& Probability
 Relations
 
 Graphs
+
+|1.7|
+
+This is an assumption that all is true, do not ask why, only that all things are, and as such we must learn from them...
+
+Identities
+	Demorgans 
+	Distributive Laws
+		Similar to 
+			a*(b+c) = a*b + a*c
+							&
+			a+(bc) = a*b + a*c (not true in algebra but true in Logic)
+	Proof by Contraposition
+		Hard to prove p-> q so instead we solve ¬q _> ¬p
+	ᗄxP(x) = for every x in the domain P(x) is true
+	∃xP(x) = there is atlest one x for which P(x) is true
+	¬(ᗄxP(x)) = There is atleast one x for which P(x) is not true
+	¬(∃xP(x)) = There is no x for which P(x) is true
+	
+x is president of USA ⟶ (Implies) x is u.s citezen
+proofs
+
+(Direct Proof):
+	x is president of USA
+		⟶Must have been a pres candidate
+		⟶Election Commision would have evaluated x for eligability
+		⟶x must have been a US citizen
+			(Otherwise Comission wouldve said otherwise based on US Constitution
+		⟶x is a US citizen
+Direct Proof	
+	Start on left hand side, prove based on whatever facts you have
+
+(Contraposition) 
+	¬(x is a US citizen by birth)  [is not a us citizen]
+		⟶ x is not a...
+		⟶x is not eligble to be a pres canidate
+		⟶x is not president of US 
+		¬(x is president of USA)
+
+1) n is even ⟶  n^2 is even
+	proof 
+		Direct 
+			 n is even 
+			 ⟶ n = 2k for same integer k
+			 ⟶ n^2 = (2k^2) = 4k^2= 2(2k^2)=2(k) where k = 2k^2 (and k is an int)
+			 ⟶ n^2 is even
+		Contradiction...?
+			n^2 is not even
+			⟶ n is not even
+			⟶n^2 is not even 
+			⟶n^s is odd	
+			⟶ n^2 = 2k+1 for some int k
+					= (2k)^2 + 4k +1
+					=4k^2 + 4k _1
+					=2(2k^2 + 2k)+1 = K
+					=2K + 1where K = 2k^2 +2k (which is an integer)
+			⟶n^2 is odd
+...) 2n+2 is o ⟶ n is odd
+	proof:
+	(Contradiction)
+		¬(n is odd) ≡  n is even
+			⟶ n = 2m where m is an integer
+			⟶ 5n+2 = 5(2m) +2
+				=2(5m+1)
+				= 2k were k = 5m+1 is an int
+			⟶ 5n+2 is even ≡ 7(5n+2 is odd)
+3) n = ab a <=sqrt(n) or b <= sqrt(n)
+	proof:
+		(Contraposition) 
+		¬((a <= sqrt(n))V(b<=sqrt(n)))
+			=¬(a <= sqrt(n))^¬(b<=sqrt(n)) Demorgans Laws
+			=(a > sqrt(n)) ^ (b < sqrt(n))
+			⟶ ab > sqrt(n) * sqrt(n)
+			⟶ ab != n  ≡  ¬(ab = n)
+4) n^2 is odd ⟶ n is odd	
+	proof:
+		(Contraposition)
+		¬(n is odd) ≡ n is even
+			⟶n = 2m for same integer m
+			⟶n^2 = (2m^2_
+							= 4m^2
+							= 2(2m^2)
+							= 2k  where j = 2m^2(int)
+			⟶n^2 is even  ≡ ¬(N^2 is odd)
+			(This would be hard to prove by direct)
+	Contraposition
+		Start w/ negation of right hand side, then prove the.....
+	
+Proof by Contradiction
+	2/3, 3/4, 1, all rational numbers (All int are rational numbers)
+	
+1) ab is even ⟶ a is even or b is even (a, b are integers)
+		[if the product of two integers is even then one of them is ....]
+	proof:
+	(Contraposition)
+		¬( a is even or b is even) = a is odd ^(or) b is odd (Demorgans Law)
+				⟶(a =2m+1)n(b = 2n+1) for some int m & n
+				⟶ab = (2m+1)(2n+1)
+							= 4mn + 2m +2n _1
+							=2(2mn +m+n) + 1
+							=2k+1 where k = 2mn+m+n ⟶ ¬(ab is even)
+1) sqrt(2) is n irrational number
+	Proof
+	(Contradiction)
+		(assume the statement is not true)
+		⟶ sqrt(2) is a rational number
+		⟶ sqrt(2) = p/q for some integers p & q, & q != 0
+			(We can assume p & q have no common factors) (*)
+			(sqrt(2))^2 = p^2/q^2
+		⟶  2 = p^2/q^2
+		⟶ 2q^2 = p^2
+		⟶ p^2 is even
+		⟶ p is even ( if ab is even, then a is even or b is even)
+		⟶ p is 2k for some int (2)
+			Substitute p = 2k in (1)
+				2q^2 = 2(2k)^2
+				2q^2 = 4k^2
+				q^2 = 2k^2
+		⟶  q^2 is even
+		⟶  q is even
+		⟶ q = 2m for some int M (3)
+		From (2) and (3), we see 2 is a common factor of p & q, 
+		which is a contradiction to the assumption  that p & q have no common factors (*)
+		So, our assumption that sqrt(2) is rational is wrong
+		so sqrt(2) is irrational
+2) Sum of a rational numver and an irrational number is irrational
+	proof:
+		(Contradiction)
+		Assume this is not true
+		⟶  There exists a rational number a and an irrational number b (*) such that a+b is rational
+		a is rational ⟶  a = p/q fpr some integers p & q
+		a +b is rational
+			⟶  a + b = m/n for some integers m,n, n != 0
+			⟶ p/q +b = m/n
+			⟶ b = m/n -p/q + (qm -pn)/(nq)  [nq != 0]
+			⟶  b is rational 
+				This ^ contradicts (*)
+		Our assumption is wrong, and the statement is true
+		
+3) Show that the following statements about an int are equivalent
+	(A) n is even
+	(B) n -1 is odd
+	(C) n^2 is even
+	proof:
+		(A) ⟶  (B), (B) ⟶  (C), (C) ⟶  (A)
+				or 
+		(A) ⟶  (B), (B) ⟶  (A), (B) ⟶  (C), (C) ⟶ (B)
+			All statements apply to eachother, should always be able to find a path
+		
+	To prove (A) ⟶  (B)
+		n is even ⟶ n =2k
+						⟶ n-1 = 2k-1
+										= 2(k-1)-1+2
+										= 2(k-1)+1
+						⟶  n -1 is odd = (B)
+	To prove (B) ⟶  (C)
+		(B)  ≡ is odd
+		⟶ n - 1 = 2k + 1 for some k
+		⟶ n = 2k +2
+		⟶n^2 = (2k+2)^2
+						= (2k +2)^2
+						= 4k^2 +8k + 4
+						= 2(2k^2 +4k +2)
+						= 2M, where M = 2k^2 + 4k + 2
+		⟶ n is even ≡ (C)
+	
+	Prove (C) ⟶ (A)
+		prove (C) ⟶ (B)
+		prove(B) ⟶ (A)
+		already done all of the above
+		
+2)  is irrational ⟶ 1/a is irrational
+	proof
+		(Contraposition)
+			¬(1/a is irrational) ≡ 1/a is rational
+			⟶ (1/a) = p/q q != 0, p != 0 (1/a != 0)
+			⟶a = q/p p != 0
+			⟶a is rational ≡ ¬(a is irrational)
+
+Atleast 10 of any 65 days chosen must fall on the ame day of the week
+	April 1 Sunday
+	May 1 Monday
+	Atleast one will have >= 10
+		65/7 = 9
+		
+Proof Methods
+	Proof by Case
+	Exhaustive Proof
+		Not often used in the real world
+	Existencce Proof
+	Uniqueness Proof
+	
+1)  (n+1)^3 >= 3^n if n > 0 and n <= 4
+	(Exhaustive Proof)
+		n = 1 : (1+1)^3 >= 3 true
+		n = 2 : (2+1)^3 >= 3^2  true
+		n = 3 : (3 +1)^3 >= 3^3 true
+		n = 4 : (4 +1)^3 >= 3^4 true
+2) n^2 >= n if n is an int
+	(Case)
+		case i n = 0 | 0^2 >= 0 true
+		case ii n >= 1 | 
+			multiplay both sides by n and get n^2 >= n
+		case iii n <= -1
+			multiply both sides by n
+			n^2 <= -1
+			n^2 is positve 
+			so n^2 >= n
+									
+		
+		
+	
