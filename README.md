@@ -35,6 +35,7 @@
   > My reccomendation is Google's Noto project, "which aims to support all languages with a harmonious look and feel" 
   > https://www.google.com/get/noto/
   > Specifically Noto Sans Symbols 2 (Which requires the Noto Sans parent font)
+  
   Notes are my own interpretation of Dr. Manivannan's lectures, textbook information, & my own personal experience
   
 ## Design of Logic Circuits [EE280]
@@ -44,5 +45,6 @@
   
   Coming Soon....
   > I need a way to visualize gate logic & circuit design in text
+  
    Notes are my own interpretation of Dr. Ashley's lectures, textbook information, & my own personal experience
     
