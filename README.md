@@ -10,21 +10,27 @@
     
 ## Intro to Program Design Abstraction & Probelm Solving [CS215]
   Spring 2017 Semester
+  
   Instructer Kevin Joiner
   
   Complete semester notes, still needs better formatting and organization
+  
   Notes are my own interpretation of Professor Joiner's lectures & my personal experience
   
 ## Intro to Software Engineering Techinques [CS216]
   Fall 2019 Semester
+  
   Dr. Yi L Pike 
   
   Semester notes are still being actively developed.
+  
   Notes are my own interpretation of Dr. Pike's lectures & my own personal experience
   
 ## Discrete Mathmatics [CS275]
   Fall 2019 Semester
+  
   Dr. D. Manivannan (Mani)
+  
   Rosen, Discrete Mathematics and Its Applications
   
   Semester notes are still being actively developed.
@@ -40,7 +46,9 @@
   
 ## Design of Logic Circuits [EE280]
   Fall 2019 Semester
+  
   Dr. Jeffrey Ashley
+  
   Brown, Vranesic, Fundamentals of Digital Logic
   
   Coming Soon....
