@@ -13,6 +13,7 @@
   
   Instructer Kevin Joiner
   
+  
   Complete semester notes, still needs better formatting and organization
   
   Notes are my own interpretation of Professor Joiner's lectures & my personal experience
@@ -21,6 +22,7 @@
   Fall 2019 Semester
   
   Dr. Yi L Pike 
+  
   
   Semester notes are still being actively developed.
   
@@ -32,6 +34,7 @@
   Dr. D. Manivannan (Mani)
   
   Rosen, Discrete Mathematics and Its Applications
+  
   
   Semester notes are still being actively developed.
   **NOTE:**
@@ -50,6 +53,7 @@
   Dr. Jeffrey Ashley
   
   Brown, Vranesic, Fundamentals of Digital Logic
+  
   
   Coming Soon....
   > I need a way to visualize gate logic & circuit design in text
