@@ -41,9 +41,7 @@
   > Logical symbols are in extremely varied sections of the Unicode Standard
   > Most fonts have limited install space and only contain a selection of Unicode Characters
   > Review of these notes may require installation of a font that supports these specific Symbols
-  > My reccomendation is Google's Noto project, "which aims to support all languages with a harmonious look and feel" 
-  > https://www.google.com/get/noto/
-  > Specifically Noto Sans Symbols 2 (Which requires the Noto Sans parent font)
+  > My reccomendation is "Evertype" (www.evertype.com) as it's readable, simple to install & monospaced
   
   Notes are my own interpretation of Dr. Manivannan's lectures, textbook information, & my own personal experience
   
