@@ -40,6 +40,7 @@
   **NOTE:**
   > Logical symbols are in extremely varied sections of the Unicode Standard
   > Most fonts have limited install space and only contain a selection of Unicode Characters
+  > https://stackoverflow.com/questions/1938639/monospace-unicode-font#
   > Review of these notes may require installation of a font that supports these specific Symbols
   > My reccomendation is "Evertype" (www.evertype.com) as it's readable, simple to install & monospaced
   
