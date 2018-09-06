@@ -1,4 +1,12 @@
-
+	Assignments
+		Projects
+			Due 11:59 pm due date
+		Lab
+			Due 11:59 every friday night
+			
+	Email
+		Use "CS 216 & Section #" in subject line 
+	
 UNIX/Linux
 	Kernal written in C
 	Graduate schools require Linux & Coding tests & interviews are often in UNIX
@@ -27,6 +35,26 @@ UNIX/Linux
 			GNU/Linux
 				Ubuntu used in the CS dept for server dev
 			MacOS X
+	Openstack
+		Popular cloud computing project
+		VM (Virtual Machine) used for CS216
+			Always test on VM before submission for benefit of TA
+		Dashboard
+			Web interface used to access VM console
+		OpenStack instance
+			Term for VM
+		Access
+			use linkblue ID & password
+			controller.netlab.uky.edu
+			"Instances"
+				instance name (linkblue ID)
+				"Instance Console"
+					enter linkblue ID & pass to continue
+			PUTTY or other ssh software
+				Hostname = linkblue id.netlab.uky.edu 
+				Port: 22
+					login as: linkblue ID
+					password: type linkblue password (UNIX does not display characters in password field)
 	Terminal 
 		Default terminal is Bash	
 		Shell
@@ -58,11 +86,130 @@ UNIX/Linux
 						Shows current variable	
 			Command
 				pwd
+
+	List of Ubuntu Commands
+		~* > output.txt
+			write command output to txt file
 		~man x
 			display manual of x program/command
 		~uname
 				OS info 
 				"uname -a"
 					detailed info
+		~pwd
+			"Print working directory"
+		~ls
+			"List contents"
+				-l
+					"Long list"
+					9 permission bits 
+						d, r w x,  r w x, r w x,
+						first 3 bits for owner, group, others, all users
+						(read, write, execute)
+		~mkdir
+			"Make directory"
+		~rmir
+			"Remove directory"
+		~rm
+			"remove file"
+			-r
+				"and all of its contents"
+		~cd
+			"Change Directory"
+		~cp
+			"Copy File"
+		~mv
+			"move or rename file"
+		~cat
+			"Concat file & print output"
+		~which
+			"Print full path of command"
+		~ echo 
+			"Write arugments to standard output"
+		~exit
+			"Exit login shell"
+		~ chmod
+			"Change mode bits of a file/directory"
+			Changes the rwx [ls -l]
+				u (+∨-) (r∧∨w∧∨x)
+		~grep
+			"pattern matching, prints lines matching a pattern"
+			Global Regular Expression Print
+				-i
+					case insensitive search
+				-n 
+					prefix each line of output w/ the line number w/in its input file
+				-w
+					select only those lines containing matches that form whole words
+		~sort
+			-d 
+				dictionary order
+			-f	
+				ignore case
+			-k 
+				key
+				sort -k 2 (sorts according to second column of text)
+		~* | *
+			 Command pipeing 
+			Passes outut from leftside of | to right side
+Regular Expressions (regex)
+	pattern that defines a class of strings
+	Grammar
+		Alternation | (Or)
+		Grouping () (Scope or & precedince)
+		Quantification ?, *, +
+			? (Zero or one) 
+			*(Zero or more)
+			+  (One or more)
+		Matching 
+			For use with a string, place inside quotations
+				Ex. " ^Hello Wo*ld"
+			. (a single character
+			*(alny string)
+			[a-zA-Z]
+			[0-9]
+			[^0-9]
+			^ (Beginning of a string)
+			$ (End of a string)
+			\< \> (Beginning and end of a word)
+		Special Characters
+			Escape special characters w/ "\" (Otherwise terminal thinks you're calling it, not the regex expression)
+
+	
+	CS216 Lab 2 notes
+		~sort -d file.txt
+			Sort a text file alphebeticaly (Dictionary) left to right
+		~grep "string" 
+			Search using regular expressions
+			Regular Expression grammer is NOT in the man page 
+			"https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285"
+				^  a simple Regex cheatsheet w/ examples 
+		~grep - i  "string"
+			-i 
+				ignore case (Capitalization)
+		~grep "Today I ate [1-4] Bannana?" 
+			[1-4]
+				Search for the string with number of bannana being  1-4
+			?
+				Search for String ending with 0 or one character [bannana or bannanas]
+		~ sort  -k3-r lilyexbfs.txt | grep "^Stephen" 
+				  lilyexbfs.txt
+			[Jack Johnson 6]
+			[Stephen Tyler 8]
+			[Just Steve 3]
+			[...]
+			-k3
+				Sort based on 3rd column 
+					Hotness
+			-r
+				Reverse sort 
+					Hottest first
+			'|'
+				Piping
+					passes output from command on left side of | and into input of right side command
+						Pass list of lily's ex's sorted by hotness to grep command
+			"^Stephen"
+				Search for lines that begin with the name Stephen
+			
 			
 			

@@ -1,0 +1,24 @@
+------------------------------------------------------
+ Definitions
+------------------------------------------------------
+	¬ (Negation Proposition) (1)
+	∧ (Conjunction of Proposition) (1)
+	∨ (Disjunction of a Proposition) (1)
+	⊕ (Exclusive Or) (1)
+	⟶ (Conditional Statement) (1)
+	¬⟶¬ [⟵] (Converse Statement) (1)
+	⟷ (Biconditional Statement) (1)
+	≡ (Logical Equivalence) (1)
+	ᗄ (Universal Quntifier) (1)
+	∃ (Counterexample of a Universal Quntifier) (1) 
+	∴ (Therefore) (1)
+	⊥(Falsity) ( 1)
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊂ (Proper Subset) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2) 
+	∩ (Intersection) (2)
+	'   (Comlimentary) (2)
+------------------------------------------------------

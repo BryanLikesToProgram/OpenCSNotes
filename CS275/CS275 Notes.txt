@@ -12,7 +12,13 @@
 	ᗄ (Universal Quntifier) (1)
 	∃ (Counterexample of a Universal Quntifier) (1) 
 	∴ (Therefore) (1)
-
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2)
+	∩ (Intersection) (2)
+	'   (Comlimentary) (2)
 ------------------------------------------------------
 
 |1.1-1.6|
@@ -492,7 +498,361 @@ Proof Methods
 			n^2 <= -1
 			n^2 is positve 
 			so n^2 >= n
-									
+			
+			
+------------------------------------------------------
+	¬ (Negation Proposition) (1)
+	∧ (Conjunction of Proposition) (1)
+	∨ (Disjunction of a Proposition) (1)
+	⊕ (Exclusive Or) (1)
+	⟶ (Conditional Statement) (1)
+	¬⟶¬ [⟵] (Converse Statement) (1)
+	⟷ (Biconditional Statement) (1)
+	≡ (Logical Equivalence) (1)
+	ᗄ (Universal Quntifier) (1)
+	∃ (Counterexample of a Universal Quntifier) (1) 
+	∴ (Therefore) (1)
+------------------------------------------------------
+			
+[1.8]	
+	Proof Methods
+		p⟶q
+			Direct 
+				assume p is true & q is true
+			Contraposition
+				assume q is not true & prove p is not true
+			Contradiction
+				assume p is not true and arrive at a contradiction
+		|xy| = |x| |y| x, y are real
+			Recall: |x| = { x if x >= 0}
+								   { -x if x < 0}
+			Proof:
+				(Case)
+					i) x = 0, y = 0  => |xy| = 0 = |x||y|
+					ii) x > 0
+						then x < 0 y > 0
+						then |xy| = -xy (by definition)
+										= -x * y
+										= |x| | y| (∴  x < 0, y > 0)
+					iii) x < 0, y > 0
+						=> |xy| = xy 
+									= (-x)(-y)
+									= |x| | y| (∴  x < 0, y > 0)
+					iv)  x > 0: y > 0
+							|x y| = xy (
+									= |x| | y|  (∴  x < 0, y > 0)
+						Similar to case (i) 
+		Show that there is a pos int that can be written as the sum of 2 cubes of 2 positive int in 2 different ways
+			Proof: 
+				(Constructive Existence)
+					1729 = 10^3 + 9^3 = 12^3 + 1^3
+		Show that there exist irrational numbers x, y such that x^y is rational
+			Proof
+				(non-constructive existance)
+					sqrt(2) is irrational
+				if
+					(sqrt(2))^(sqrt(2)) is rational, we are done
+				else 
+					let x = (sqrt(2))^(sqrt(2)), y = (sqrt(2))
+					then x^y = [(sqrt(2))^(sqrt(2))]^(sqrt(2))
+						= (sqrt(2))^2 = 2 (which is rational)
+			ax+b = c
+				x = (c-b)/a satisfies this eqiation
+				so ax+b - c has a solution
+				
+				Proof
+				(Uniqueness)
+					suppose it has two solutions x1 & x2
+					then both satisfy this equation
+						=> ax1 + b = c 	-(1)
+							 ax2 + b = c 	-(2)
+						--------------------
+						(-) a(x1 - x2) = 0
+						
+						a != 0
+						dividing by a:
+							x1-x2 = 0
+							or xq = x2
+							so Solution is Unique
+							
+			{What kind of proofs are these? V}
+			Prove that there are 100 consecutive integers that are not perfect squares
+				1^2, 2^2, 3^2, 4^2...
+				Answer: 100^2:10000
+								101^2:10200
+								Between 10,000 and 10201 none of the 200 numbers are perfect squares
+			Prove that there are 2 consecutive integers such that 1 is a perfect square, and the other is a perfect cube
+			
+			Answer: 8,9
+							2^3, 2^2
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2)
+	∩ (Intersection) (2)
+	'   (Comlimentary) (2)							
+------------------------------------------------------
+[2.1]
+	Sets (∈, ∉, ⊆)
+		Unordered well defined collection of objects, obj in a set are known as elements or members
+		Define Sets
+			Cantor Notation?
+				a ∈ A 
+					a is an Element of set A
+				a ∉ A
+					a is not an element of set A
+				B ⊆ A
+					B is a subset of set A
+					(Subset: if every element B is an element of A)
+			Set Builder Notation
+				O = {x|x is an odd pos int les than 50}
+				A = {x| (x is an int)∧(1<= x <= 8)}
+		Set Venn Diagram
+			Each set would be a circle, overlap between them
+			A = {12345678}
+			B = { 678910,11,12}
+			C={8910,15,16,17}
+		Real Life Examples
+			Z+ ={1,2,3...} 
+				Set of all pos integers
+			N = {0,1,2,3...} 
+				Set of all natural Numbers
+			Z = { -2, -1, 0, 1, 2) 
+				Set of all integers 
+			Q = {(p/q)|p, q ∈Z and q != 0}
+				Set of all Rational Numbers
+			R= {-inf-> inf}
+				Set of all real numbers
+			R+ {inf}
+				Set of all pos real numbers
+			Note:
+				Z+⊆N⊆Z⊆Q⊆R & R+⊆R
+		Operations
+			== 
+				A = {1,2,3,4}
+				B = {4,3,2,1}
+				A = B
+					or 
+				A ⊆ B & B ⊆ A
+		Empty Set 
+		No Elements
+			∅ or { } 
+		Cardinality
+			?
+		Power
+			A = {1, 2, 3}
+			P(A) = {∅, {1}, {2}, {3}, {1,2}, {1, 3}, {2,3}, {1,2,3}
+			If |A| = n
+				then |P(A) = 2^n
+			P(A) = 2^3=8
+		Touple
+			ordered n touple, order collection starting w/ a1, a2,....an as it's nth element
+			Touple pairs are only equal if all n elements are equal in both sets
+			(12345) != (15234) 
+			(12345)=(12345)
+		Cartesian Product
+			set A x set B is the set of all ordered pairs (a, b) where a ∈ A & b ∈ B
+			A x B = {(a,b) | a ∈ A, b ∈ B}
+			A1x A2 ..... x An = {(a1, a2, ..., an)|ai ∈ Ai = 1,2...n}
+	Ex.		
+		A = Set of all Countries
+		B = Set of all Cities
+		AxB = { (a,b) | (a ∈ A)∧(b ∈ B)}
+		R⊆AxB
+		Defined by R = {(a,b) | (a ∈ A) ∧ ( b is the capital of a)}
+								= {(US, Washingon DC), (France, Paris)}
+	Ex.
+		Domain = all int
+			P(x) = x^2 >= 25
+		Truth Vals of P(x) = {x| p(x)}
+										 = {...., -6, -5, 5, 6, 7...}
+										 ={x|(x∈z) ∧((x < = -5)∨(x >=5))
+										 ={x|(x∈z) ∧(|x| >= 5)
+	
+	Set Operations
+		Union ∪
+			Contains just the elements of A & B
+		Intersection ∩
+		Compliment '
+			All the elements that do not belong to a certain set 
+			
+		∪ =  set of all integers, universal Set
+		A = {1,2,3,4,5,6}
+		B = {3,5,6,8,9,10}
+		C= {4,5,11,12,13}
+		A' (Compliment) = {-2-1,0,7,8,9,10}
+		A-B = {1,2,4}
 		
+	Ex.
+		Let ∪ = the set of all undergrads at UK
+		A = the set of all accouning majors = {x |  major of x is accouting}
+		B = the set of all biology majors = {x |  major of x is biology}
+		C = the set of all CS majors = {x |  major of x is CS}
+		M = the set of all math majors = {x |  major of x is math}
+		
+		A ∩ B = { x | (x ∈ A) ∧ (x ∈ B) } 
+				= { x | x is mahoring in Accounting, Biology and CS}
+		M' = {x | x is not a math major}
+		A ∪ B = {x | (x ∈ A) ∨ (x ∈ B)  } 
+			= { x | x is accounting major or a biology major}
+	
+	Ex. Prove (A ∩ B)' = A' ∪ B'
+	proof  (WILL BE ON EXAM)
+		(A ∩ B)' = { x | x ∉ A ∩ B}
+						= {x | x ¬  A ∩ B}
+						={x | x( (x∈A) ∧ (x∈B)} by definition of A∩B
+						={x |  ¬ (x∈A) ∨ ¬(x∈B)} 
+						={x | (x∉A) ∨ (x∉B)
+						=....x∈A' .....x∈B'
+						...?
+		or
+		
+		x ∈ A | x ∈ B | X ∈ (A ∩ B)' | x ∈ A'| x ∈ B' | x ∈ A' ∪ B'
+		T | F | F | T | F | T | T |
+		T | T | T | F | F | F | F | 
+		F | T | F | T | T | F | T |
+		F | F | F | T | T | T | T |
+		
+		X ∈ A ∩ B = x ∈ A' ∪ B'
+		
+	Ex. Prove (A ∪ (B ∩ C))' = ( C' ∪ B') ∩ A'
+	proof 
+		A ∪ (B ∩ C))'  = A'  ∩ (B ∩ C))'  (Demorgans Law)
+								= A' ∩ (B ' ∪  C')  (DeMorgan)
+								= (B' ∪  C') ∩ A' (Communative)
+								= (C' ∪ B')  ∩ A'  (Communative)
+	
+	Ex. Prove	(A  ∩ ( B  ∩ C))' = A' ∪ B' ∪ C'
+		proof 
+			(A  ∩ ( B  ∩ C))'  = A' ∪ B'∩ C' (demorgans) 
+			....?
+	Ex. Prove (A - B) ≡  A ∩ B'
+		A - B ≡ {x | (x ∈ A) ∩ (x ∉ B)}
+				= { x | (x ∈ A) ∩ (x ∈ B')}
+				= A∩B'
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2)
+	∩ (Intersection) (2)
+	'   (Comlimentary) (2)							
+------------------------------------------------------
+[2.3] 
+Functions (Check dr Mani's notes)
+	F : A ⟶ B 
+	Function
+		Example1
+			{...}
+			C = the set of all CS Students
+			lest g : C ⟶ [all real number] be defined by 
+			g(x) = age of x
+				or
+			g(x) = gpa of x 
+	Image of S under f
+		Example 2
+			{...}
+			f(2) = 7
+			range of f = {7, 8}
+			Domain	
+				codomain
+				image, preimage
+	
+	Injection, (One to one)
+		Example 3
+			{...}
+		
+		f + g(x)  = f(x) + g(x) 
+		f*g(x) = f(x)g(x)
+		
+		if f(s) = {a,b}, then f(s) = {2,3}
+		
+		injection ( one to one) 
+		f is not one to one
+		g is not one to one
+	Increasing and Strictly increasing function
+		Example 4
+			{....}
+	On to and surjective
+		Example 5
+	
+	on to & one to one contd.
+		One to function
+		on to function
+		one to one correspondance is both one to one an on to
+	Correspondance and biijection
+	
+	Ex. 
+		Find the domain and range of the following functions
+			a. a function that assigns for each pair of posive integers the first integer of the pair
+			b. a function that assigns to each positivs int its largest decimal digit
+			c. a function that assigns for each bit string, the number of I's in the bit string
+			d. a function that assigns each positive int the largest int not exceding the sq root of the int
+			e. a fuction that assigns for each bit string the longest substring of one's in the string
+			
+		proof
+			a) f : ⟶  
+				Z+ is all positive int
+				f (5,4) = 5
+				f(10,7) = 10
+				
+				f" Z+ x Z+ ⟶ Z+
+					defined by f(a, b) = a ᗄ (a,b) ∈ Z+ x Z+
+					
+			b)  f : ⟶  
+				Z+ is all positive integers
+				
+				 f : Z+ ⟶  {!0, 1,2,3,4,5,67,8,9}
+				 
+			c) f: {0,1}*
+				f : the set of all bit strings ⟶ 
+					f: (101011001) = 5 
+				f : the set of all bit strings ⟶  all N numbers
+					f: (00000) = 0
+					
+					f : the set of all bit strings ⟶  N
+			
+			d) f: ⟶ 
+				
+				f: Z+ ⟶  Z+
+			e) f ⟶ 
+				f: the set of all strings ⟶  
+					f(11110110001) = 1111
+				f: the set of all strings ⟶  the set of all bit strings that only contain 1 and no 0
+			
+	Ex. {6}
+		f: Z ⟶  Z defined by f() = { x - 10 if x > 0
+													   { 0			 |x| <= 10
+													   {x+10  if x < 10
+		f1: AllReal ⟶ R          f1() = { x - 10 if x > 10
+													   { 0			 |x| <= 10
+													   {x+0 if x < -10 
+			Defined by f1(x) = x^3
+		f2: AllReal ⟶ Allreal 
+			defined by f(x) = x^2
+		f3: AllReal ⟶ Allreal 
+			defined by f3(x) = |x|
+		f4: AllReal ⟶ Allreal 
+			defined by f4(x) = { 1 if x < 10
+												{x^2 if x >= 10
+		f5: AllReal ⟶ Allreal 
+			defined by f5(x) = sqrt(x)
+			
+			
+		|1to1| on-to| 1to 1 correspondance | increadng | strictlyy increasing
+		f: F | T | F | T | F |
+		f1: T | T | T | T | T | 
+		f2: F | F | F | F | F | 
+		f3:
+		f4:
+		f5:
+	
 		
 	
