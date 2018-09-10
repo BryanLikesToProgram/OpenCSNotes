@@ -1,0 +1,35 @@
+	CS216 Lab 2 notes
+		~sort -d file.txt
+			Sort a text file alphebeticaly (Dictionary) left to right
+		~grep "string" 
+			Search using regular expressions
+			Regular Expression grammer is NOT in the man page 
+			"https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285"
+				^  a simple Regex cheatsheet w/ examples 
+		~grep - i  "string"
+			-i 
+				ignore case (Capitalization)
+		~grep "Today I ate [1-4] Bannana?" 
+			[1-4]
+				Search for the string with number of bannana being  1-4
+			?
+				Search for String ending with 0 or one character [bannana or bannanas]
+		~ sort  -k3-r lilyexbfs.txt | grep "^Stephen" 
+				  lilyexbfs.txt
+			[Jack Johnson 6]
+			[Stephen Tyler 8]
+			[Just Steve 3]
+			[...]
+			-k3
+				Sort based on 3rd column 
+					Hotness
+			-r
+				Reverse sort 
+					Hottest first
+			'|'
+				Piping
+					passes output from command on left side of | and into input of right side command
+						Pass list of lily's ex's sorted by hotness to grep command
+			"^Stephen"
+				Search for lines that begin with the name Stephen
+			

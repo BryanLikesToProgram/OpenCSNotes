@@ -1,12 +1,3 @@
-	Assignments
-		Projects
-			Due 11:59 pm due date
-		Lab
-			Due 11:59 every friday night
-			
-	Email
-		Use "CS 216 & Section #" in subject line 
-	
 UNIX/Linux
 	Kernal written in C
 	Graduate schools require Linux & Coding tests & interviews are often in UNIX
@@ -14,7 +5,7 @@ UNIX/Linux
 	
 	Linux	
 		Open source version of Unis
-	UNIX	c
+	UNIX	
 		OS ceated in 1960's by Ken Thompson, Bell Labs.
 		Many branches
 			BSD (Berkeley Software Distribution)
@@ -88,8 +79,6 @@ UNIX/Linux
 				pwd
 
 	List of Ubuntu Commands
-		~* > output.txt
-			write command output to txt file
 		~man x
 			display manual of x program/command
 		~uname
@@ -124,7 +113,7 @@ UNIX/Linux
 			"Concat file & print output"
 		~which
 			"Print full path of command"
-		~ echo 
+		~echo 
 			"Write arugments to standard output"
 		~exit
 			"Exit login shell"
@@ -149,9 +138,63 @@ UNIX/Linux
 			-k 
 				key
 				sort -k 2 (sorts according to second column of text)
-		~* | *
-			 Command pipeing 
-			Passes outut from leftside of | to right side
+		~ssh * (Server name)
+			-l *
+				login username
+			-p *
+				port to connect on remote host
+			Escapes
+				~? 
+					List of escape characters
+				~.
+					Disconnec
+		~scp 
+			Copy files over ssh connection
+			Local -> remote
+				~scp *.file remoteuser@servername:/remote/directory/
+			Remote -> local
+				~scp remoteuser@servername:/remote/directory/*.file
+			Remote -> different remote
+				~scp remoteuser1@servername1:/remote/directory/*.file remoteuser2@servername2:/remote/directory/
+			Specifying ports
+				different program architecture from ssh
+				-P *(port)
+					must go BEFORE declairing username & server
+						this is how scp decides which port applies to which remote host
+	Bash Programming Tools
+		Redirection 
+			>
+				'redirects std-out to file'
+				creates a file if not present
+				OVERWRITES files
+			>>
+				'appends std-out to file'
+				creates a file if not present
+				Appends files
+			<
+				'redirects std-in from file'
+				open and read from file
+		Piping
+			|
+				pass output from leftside | as input to right side
+				ex: $ cat *.txt | sort -d
+		File System
+			Root/System
+			Directory control
+				'.'
+					current directory
+				'..' 
+					1x higher directory
+				'~' 
+					home directory
+			Absalute
+				/home/user/project/*.file
+			Relatve
+				~/CS216, ./CS216
+			Filename Wildcards
+				* 
+					o or more
+				? exactly one character
 Regular Expressions (regex)
 	pattern that defines a class of strings
 	Grammar
@@ -174,42 +217,3 @@ Regular Expressions (regex)
 			\< \> (Beginning and end of a word)
 		Special Characters
 			Escape special characters w/ "\" (Otherwise terminal thinks you're calling it, not the regex expression)
-
-	
-	CS216 Lab 2 notes
-		~sort -d file.txt
-			Sort a text file alphebeticaly (Dictionary) left to right
-		~grep "string" 
-			Search using regular expressions
-			Regular Expression grammer is NOT in the man page 
-			"https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285"
-				^  a simple Regex cheatsheet w/ examples 
-		~grep - i  "string"
-			-i 
-				ignore case (Capitalization)
-		~grep "Today I ate [1-4] Bannana?" 
-			[1-4]
-				Search for the string with number of bannana being  1-4
-			?
-				Search for String ending with 0 or one character [bannana or bannanas]
-		~ sort  -k3-r lilyexbfs.txt | grep "^Stephen" 
-				  lilyexbfs.txt
-			[Jack Johnson 6]
-			[Stephen Tyler 8]
-			[Just Steve 3]
-			[...]
-			-k3
-				Sort based on 3rd column 
-					Hotness
-			-r
-				Reverse sort 
-					Hottest first
-			'|'
-				Piping
-					passes output from command on left side of | and into input of right side command
-						Pass list of lily's ex's sorted by hotness to grep command
-			"^Stephen"
-				Search for lines that begin with the name Stephen
-			
-			
-			

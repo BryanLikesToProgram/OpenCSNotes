@@ -19,6 +19,8 @@
 	∪ (Union) (2)
 	∩ (Intersection) (2)
 	'   (Comlimentary) (2)
+	⌊ ⌋ (Floor) (2)
+	⌈ ⌉ (Cealing) (2)
 ------------------------------------------------------
 
 |1.1-1.6|
@@ -62,10 +64,10 @@ Foundations of Logic & Proof
 		
 Propositions	
 	| p | q | ¬p | ¬q | p∧q | p∨q |  p⊕q | p⟶q |  ¬p⟶¬q  |  p⟷q |
-	  T   T    F    F        T       T           F          T              T               T
-	  T   F    F    T        F       T           T           F              T               F
-	  F   T    T    F        F       T           T          T              F               F
-      F   F    T    T        F       F           F          T              T               T
+	| T | T | F  | F  |  T  | T  |   F  |  T  |    T    |   T  |
+	| T | F | F  | T  |  F  | T  |   T  |  F  |    T    |   F  |
+	| F | T | T  | F  |  F  | T  |   T  |  T  |    F    |   F  |
+    | F | F | T  | T  |  F  | F  |   F  |  F  |    T    |   T  |            
 	Negation of a Proposition (NOT) ¬
 		is denoted by ¬p of proposition p
 		ALWAYS applied before any other operators
@@ -88,22 +90,22 @@ Propositions
 				Ex. (p∨¬q) ⟶ (p∧q)
 				(p∨¬q)
 				| p | q | ¬q | p∨¬q |
-				  T   T    F        T
-				  T   F    T        T
-				  F   T    F         F
-				  F   F    T         T
+				| T | T |  F |   T  |
+				| T | F |  T |   T  |
+				| F | T |  F |   F  |
+				| F | F |  T |   T  |
 				  (p∧q)
 				| p | q | p∧q | 
-				  T   T      T
-				  T   F       F
-				  F   T       F
-				  F   F       F
+				| T | T |  T  |
+				| T | F |  F  |
+				| F | T |  F  |
+				| F | F |  F  |
 				 (p∨¬q) ⟶ (p∧q)
 				 | p | q | p∨¬q | p∧q | (p∨¬q) ⟶ (p∧q) |
-				   T   T       T          T                      T
-				   T   F       T          F                       F
-				   F   T       F          F                       T
-				   F   F       T          F                       F
+				   T   T    T     T     T
+				   T   F    T     F     F
+				   F   T    F     F     T
+				   F   F    T     F     F
 		Order of Logical Operations
 			 ¬, ∧, ∨, →, ↔
 		Logical Equivalencies  ≡
@@ -743,7 +745,9 @@ Proof Methods
 	∅ (Empty Set) (2)
 	∪ (Union) (2)
 	∩ (Intersection) (2)
-	'   (Comlimentary) (2)							
+	'   (Comlimentary) (2)			
+	⌊ ⌋ (Floor) (2)
+	⌈ ⌉ (Cealing) (2)
 ------------------------------------------------------
 [2.3] 
 Functions (Check dr Mani's notes)
@@ -802,43 +806,39 @@ Functions (Check dr Mani's notes)
 				Z+ is all positive int
 				f (5,4) = 5
 				f(10,7) = 10
-				
 				f" Z+ x Z+ ⟶ Z+
 					defined by f(a, b) = a ᗄ (a,b) ∈ Z+ x Z+
-					
 			b)  f : ⟶  
 				Z+ is all positive integers
-				
-				 f : Z+ ⟶  {!0, 1,2,3,4,5,67,8,9}
-				 
+				f : Z+ ⟶  {!0, 1,2,3,4,5,67,8,9}
 			c) f: {0,1}*
 				f : the set of all bit strings ⟶ 
 					f: (101011001) = 5 
 				f : the set of all bit strings ⟶  all N numbers
 					f: (00000) = 0
-					
 					f : the set of all bit strings ⟶  N
-			
 			d) f: ⟶ 
-				
 				f: Z+ ⟶  Z+
 			e) f ⟶ 
 				f: the set of all strings ⟶  
 					f(11110110001) = 1111
 				f: the set of all strings ⟶  the set of all bit strings that only contain 1 and no 0
-			
 	Ex. {6}
-		f: Z ⟶  Z defined by f() = { x - 10 if x > 0
-													   { 0			 |x| <= 10
-													   {x+10  if x < 10
-		f1: AllReal ⟶ R          f1() = { x - 10 if x > 10
-													   { 0			 |x| <= 10
-													   {x+0 if x < -10 
+		f: Z ⟶  Z defined by f() = {x - 10, if  x > 0}
+								   {0,		if |x| <= 10}
+								   {x+10,   if  x < 10}
+								   
+		f1: AllReal ⟶ R     f1() = {x - 10, if x > 10}
+								   {0,      if |x| <= 10}
+								   {x+0,    if x < -10 }
 			Defined by f1(x) = x^3
+			
 		f2: AllReal ⟶ Allreal 
 			defined by f(x) = x^2
+			
 		f3: AllReal ⟶ Allreal 
 			defined by f3(x) = |x|
+			
 		f4: AllReal ⟶ Allreal 
 			defined by f4(x) = { 1 if x < 10
 												{x^2 if x >= 10
@@ -846,13 +846,104 @@ Functions (Check dr Mani's notes)
 			defined by f5(x) = sqrt(x)
 			
 			
-		|1to1| on-to| 1to 1 correspondance | increadng | strictlyy increasing
-		f: F | T | F | T | F |
-		f1: T | T | T | T | T | 
-		f2: F | F | F | F | F | 
-		f3:
-		f4:
-		f5:
-	
+		   |1to1| on-to| 1to 1 correspondance | increasingng | strictlyy increasing | Domain | Codomain | Range
+		f: | F | T | F | T | F | F | F | Z | Z | Z 
+		f1:| T | T | T | T | F | T | F | R | R | R 
+		f2:| F | F | F | F | F | F | F | R | R | R+∪ {0} 
+		f3:| F | F | F | F | F | F | F | R | R | R+∪ {0}
+		f4:| F | F | F | Y | F | F | F | R | R | 
+		f5:| F | F | F | F | F | F | F | R | R | R
 		
-	
+		Give an example of a function f: Z⟶ Z 
+			that is
+			i) 1-to-1, but not on-to
+				f(x) = x^3 (2x, 3x, 5x)
+			ii) on-to, but not one-to-one
+				f(x) = { 0     if -2 <= x <= 2 }
+					 = { x + 2 if  x < -2 	   }		
+					 = { x -2  if  x > 2 	   }
+			iii) 1-to-1 and on-to
+				f(x) = x-5
+		
+	one to one correspondance
+		{ex. 7}
+		
+	inverse function
+		{ex. 8}
+		inverse of f: R ⟶ R
+			defined by f(x) = 2x
+			f^(-1): R ⟶ R 
+			defined by : f^(-1) = x/2
+			
+	Composition of Functions:
+		{ex. 9}
+		f: A⟶B, g: B⟶C, h: C⟶D
+		hogof: A⟶D
+		let f: R ⟶ R 
+				defined by f(x) = x^2
+			g: R ⟶ R 
+				defined by g(x) = x^3 + 10
+			f o g: R ⟶ R 
+				defined by fog (x) = ((x^3) + 10)^2
+				gof(x) == g(f(x)) = g(x^2) = (x^2)^3 +10
+				
+	Ex.
+		let f: R ⟶ R  be defined by f(x) = x^3
+			g: R ⟶ R+  be defined by g(x) = x^2-2
+			h: R ⟶ R+  be defined by h(x) = |x| + 1
+		hofog(x) 
+			= h(f(g(x))
+			= g(f(x^2-2))
+			= h((x^2 -2)^3)
+			= |(x^2-2)^3| + 1
+		hofog:R ⟶ R  is defined by|(x^2-2)^3| + 1
+	Floor Function ⌊ ⌋
+		⌊ ⌋: R ⟶ R  is defined by
+		⌊x⌋ =  the greatest integer <=x
+	Cealing Function ⌈ ⌉
+		⌈ ⌉: R ⟶ R  is defined by
+		⌈x⌉ = the smallest integer >= x
+	Ex. 
+		One byte = 8 bits
+		Data rep as string of bytes
+			How many bytes to send 1001 bits?
+		Answer:
+			[1001/8] = 126 bytes (Cealing)
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2)
+	∩ (Intersection) (2)
+	' (Comlimentary) (2)			
+	⌊ ⌋ (Floor) (2)
+	⌈ ⌉ (Cealing) (2)
+------------------------------------------------------
+[2.4]
+Sequences and Summation
+	Sequence
+		Ex. 
+			i) a0 = 1
+			   a[n] = n^2 + a[n-1] if n >= 1
+			   a0 = 1, a1 = 2, a2 = 6, a3 = 9 ...
+			   1,2,6,9
+	Geometric Sequences
+		i) 1,5,25,125
+			a = 1, r = 5
+			a, ar, ar^2, ar^3
+		ii) 5,10,20,40,80,
+			a = 5, r = 2
+	Arithmetic Progression
+		i) 5,7,9,11
+			a = 5, d = 2
+		ii) 7, 10, 13, 16
+			a = 7, d = 3
+	Ex.
+		i) 3,6,11,18,27
+			a1 = 3, an = ?
+			3, 5, 7, 9, 
+			an = a1 + 2n + 1
+		ii)
