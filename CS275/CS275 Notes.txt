@@ -947,3 +947,132 @@ Sequences and Summation
 			3, 5, 7, 9, 
 			an = a1 + 2n + 1
 		ii)
+	Ex. 
+		A bank gives 2% intrest compounded annually
+		i) write a recurrence relation for the total amount you will recieve
+		   after an initial deposit of p dollars after n years
+		ii) write a formula for the amount you will recieve after n year 
+		Answer: 
+			let a(n) be the amount you will recieve after n year (initial deposit = p)
+			Then a(1) = p*(0.02) + p
+			     a(n) = a(n-1)*(0.02) + a(n-1)
+			          = a(n-1)(1.02)
+			          = a(n-2)(1.02)(1.02) = a(n-2)(1.02)^2
+			     a(n) = a(n-[n-1]) (1.02)^(n-1)
+			     	  = a(1) (1.02)^(n-1)
+				  = p(1.02)(1.02)^(n-1)
+				  = p(1.02)^n
+	Summation Notation
+		a(1) + a(2) + a(3) .... a(n) = Σ{k=1}^n a(k)
+		a(1) + a(2) + a(3) .... a(10) = Σ{i = 1}^10 a(i) = Σ{1 <= i <= 10} ai
+		a(10) + a(11) + a(12) .... a(100) = Σ{k = 10}^100 a(k)
+		
+		Ex.
+			i) Σ{k = 0}^n ar^k (r!=1) = (ar(n+1) - a)/(r-1) if r!= 1
+			proof 
+				let S = Σ{k = 0}^n ar^k 
+				i.e S = a + ar + a(r^2) + a(r^3) ... + a(r^n)
+				    multiply both sides by r
+				rS = a + ar + a(r^2) + ... + a(r^n) + a(r^n+1) + a
+				...
+		Ex.
+			i) Σ{k = 1}^n = n(n+1)/2
+			proof: 
+				let S = Σ{k = 1}^n k
+				i.e S = 1 + 2 
+				...
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+	∈ (Set) (2)
+	∉ (Not-Set) (2)
+	⊆ (Subset) (2)
+	∅ (Empty Set) (2)
+	∪ (Union) (2)
+	∩ (Intersection) (2)
+	' (Comlimentary) (2)			
+	⌊ ⌋ (Floor) (2)
+	⌈ ⌉ (Cealing) (2)
+	Σ (Sum) (2)
+	ℵ₀ (Contable) (2)
+------------------------------------------------------
+[2.5]
+Cardinality of Sets
+	Countable Set 
+		A set is countable if |S| < inf or |S| = ℵ₀ 
+		Aleph Null ℵ₀
+			When infinite set S is countable, its cardinality is Aleph Null
+		Ex. 
+		    The set of all even pos int is countable
+		    proof:
+			f: Z+ -> the set of all even pos int
+			    f(x) = 2x 
+			f is a one-to-one correspondance between 
+			    z+ to the set of all even pos integers
+			So the set of all even pos numbers is countable
+		    ii) the set of all odd (+ and - num) is countable
+			f: Z+ the set of all odd int
+			defined by 
+				...
+		Ex.
+		    A subset of a countable set is Countable
+		    Proof
+		    	Let A be a countable Set
+			let B <= A
+			if B is finite, then B is countable
+			If B is not finite
+				Let A = {a(1),a(2),a(3),....a(n)}
+				Then B = {a(n[1]), a(n[2]), a(n[3]) .... a(n[k])}
+			define f: z+ -> B
+				by f(k) = a(n[k])
+			f is a 1-to-1 correspondance
+			So...
+			    B: Countable
+		Ex.
+		    The set of all R (Real numbers) is countable
+		    proof:
+		    	   the set of all real Numbers in the interval (0,1) is UNcountable
+			   [Contradiction]
+			 
+			   There is a one-to-one correspondance f: z+ -> (0,1)
+			   	defned by f(k) = a(k)
+			   	
+			   So (0,1) = {a(1), a(2), a(3), ....}
+			      Let a(1) = 0 * d(11)d(12)d(13)...
+			      	  a(2) = 0 * d(21)d(22)d(23)...
+				  	.
+				  	.
+				  	.
+				  a(k) = 0 * d(k1)d(k2)...
+			   Define
+			   	d = 0*d(1)d(2)d(3)
+				Where di = {5 if dii != 5
+					   {6 if dii = 5
+				then a! = a(i) for any i
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+
+------------------------------------------------------
+[5.1]
+Mathematical Induction
+	Principle of Mathematical Induction
+		To prove P(n) is true for all +Int n, where P(n) is propositional
+		1. Basis Step: Verify P(1) is true 
+		    (P(n) is true for n = 1)
+		2. Inductive Step: For all +Int k, assume k is true & show P(k) is true
+		[P(1)∧∀k(P(k)→P(k+1))] → ∀nP(n)]
+	Proof:
+		p(n): Σ{i=1}^ni = n(n+1)/2
+		[induction]
+			Basis:
+				P(1): Σ(i = 1)^1 i = 1(1+1)/2 ?
+				    (i.e 1 = 1? -> yes!)
+				P(1): True
+			Inductive:
+				Assume P(k) is true
+				    (i.e assume Σ{i =1}^k i = k(k+1)/2) *
+				Prove p(k+1) is true
+				    (i.e prove Σ{i =1}^k i = (k+1)(k+1+1)/2)
+				    Σ{i =1}^k+1 i = Σ{i =1}^k i + (k + 1)
+				    		  = k(k+1)/2 + (k+1) by induction hypothesis *
