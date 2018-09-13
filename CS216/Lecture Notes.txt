@@ -81,6 +81,9 @@ UNIX/Linux
 	List of Ubuntu Commands
 		~man x
 			display manual of x program/command
+			^d
+				Scroll Down
+			^u  Scroll Up
 		~uname
 				OS info 
 				"uname -a"
@@ -195,6 +198,28 @@ UNIX/Linux
 				* 
 					o or more
 				? exactly one character
+		Text Editors
+			Console
+				Faster, more reliable & sustainable, especially over remote connections
+			Graphical
+				More, intuitive & user freindly
+			Vim
+				Console
+				Standard Linux editor
+				Usage
+					Two modes
+						Insertion mode (Text input)
+							'i'
+						Command mode (save, quit, copy, paste, etc...)
+							':'
+							':help'
+				Pros					|Cons
+				--------------------------------------------------
+				Powerful				|Not user freindly	
+			Emacs
+				Console
+				Expansiv
+					
 Regular Expressions (regex)
 	pattern that defines a class of strings
 	Grammar

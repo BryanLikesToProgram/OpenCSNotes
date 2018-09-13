@@ -12,6 +12,7 @@
 	ᗄ (Universal Quntifier) (1)
 	∃ (Counterexample of a Universal Quntifier) (1) 
 	∴ (Therefore) (1)
+	⊥ (Falsity) (1)
 	∈ (Set) (2)
 	∉ (Not-Set) (2)
 	⊆ (Subset) (2)
@@ -677,8 +678,9 @@ Proof Methods
 	
 	Set Operations
 		Union ∪
-			Contains just the elements of A & B
+			Contains the elements of both A & B
 		Intersection ∩
+			Contains just the elements that overlap between A & B (common elements)
 		Compliment '
 			All the elements that do not belong to a certain set 
 			

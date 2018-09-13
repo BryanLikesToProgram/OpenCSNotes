@@ -12,7 +12,7 @@
 	ᗄ (Universal Quntifier) (1)
 	∃ (Counterexample of a Universal Quntifier) (1) 
 	∴ (Therefore) (1)
-	⊥(Falsity) ( 1)
+	⊥ (Falsity) (1)
 	∈ (Set) (2)
 	∉ (Not-Set) (2)
 	⊂ (Proper Subset) (2)
