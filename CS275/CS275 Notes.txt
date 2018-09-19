@@ -674,7 +674,7 @@ Proof Methods
 		Truth Vals of P(x) = {x| p(x)}
 										 = {...., -6, -5, 5, 6, 7...}
 										 ={x|(x∈z) ∧((x < = -5)∨(x >=5))
-										 ={x|(x∈z) ∧(|x| >= 5)
+											={x|(x∈z) ∧(|x| >= 5)
 	
 	Set Operations
 		Union ∪
@@ -786,14 +786,13 @@ Functions (Check dr Mani's notes)
 	Increasing and Strictly increasing function
 		Example 4
 			{....}
-	On to and surjective
-		Example 5
-	
-	on to & one to one contd.
-		One to function
-		on to function
-		one to one correspondance is both one to one an on to
-	Correspondance and biijection
+	Injective functions [One to One]
+		Each element of the two domains are mapped to AT MOST an oposing element 
+	Surjective functions [On to]
+		Each element of the two domains are mapped to ATLEAST an oposing element 
+	BiJective [One to One & On to]
+		Both Injective and Surjective:
+		There are a matching number of elements in both functions, and it's Injective
 	
 	Ex. 
 		Find the domain and range of the following functions
@@ -1057,7 +1056,7 @@ Cardinality of Sets
 
 ------------------------------------------------------
 [5.1]
-Mathematical Induction
+Mathematical Induction [WILL BE ON EXAM]
 	Principle of Mathematical Induction
 		To prove P(n) is true for all +Int n, where P(n) is propositional
 		1. Basis Step: Verify P(1) is true 
@@ -1078,3 +1077,237 @@ Mathematical Induction
 				    (i.e prove Σ{i =1}^k i = (k+1)(k+1+1)/2)
 				    Σ{i =1}^k+1 i = Σ{i =1}^k i + (k + 1)
 				    		  = k(k+1)/2 + (k+1) by induction hypothesis *
+	To prove P(n) is true for all n >= 1:
+		i) prove p(i) is true (Basis Step)
+		ii) assume p(k) is true for all k & prove p(k+1) is true
+	Ex.
+		prove 1+3+5+...(2n-1) = n^2
+			or Σ{i=1}^n (2i-1)
+		let P(n): Σ{i=1}^n (2i-1) = n^2 ᗄn >= 1
+		Proof:
+			i) P(1): Σ{i=1}^1 (2i-1) = i^2?
+			   p(1): 			1	== 	1 True
+			ii) assume p(k) is true
+					i.e Σ{i=1}^k (2i-1) = k^2 ᗄ>= 1
+				prove: Σ{i=1}^k (2i-1) = (k+1)^2
+					...
+	Ex.
+		P(n): Σ{i=1}^n i^2 = (n(n+1)(2n+1))/6
+		Proof: 
+			i) P(1) Σ{i=1}^1 i^2 = (1(1+1)(3))/6 ? 
+								1 = 1 True
+			ii) Assume P(k): Σ{i=1}^k i^2 = (k(k+1)(2k+1))/6
+				prove:  Σ{i=1}^(k+1) i^2 = ((k+1)(K+2)(2(k+1)+1))/6
+					Σ{i=1}^(k+1) i^2 = ((k+1)(K+2)(2(k+1)+1))/6 + (k+1)^2
+									 = ((k+1)(K+2)(2(k+1)+1))/6 = {(k+1)[[(k+1)(K+2)(2(k+1)+1)]}/6
+									 = ((k+1)(2k^2 + k + 6k + 6))/6 * 
+									 = (k+1)(K+2)(2k + 2 + 1)
+									 = [(k+1)(2k^2 +2k + k + 4k + 4 + 2)]/6 *
+									 * == * P is true
+	Ex. Σ{i=1}^n i^3 = (n^2(n+1)^2)/4
+		Proof:
+			i) P(1) = Σ{i=1}^n i^3 = (1^2(1+1)^2)/4 ?
+								 1 = 1 True
+			ii) P(k) = Σ{i=1}^k i^3 = (k^2(k+1)^2)/4   
+									= (k^2(k+1)^2)/4 + (k+1)^3
+									= ((k^2)(k+1)^2+4(k+1)^3)/(4)
+									= ((k+1)^2(k^2+4(k+1)))/4 == ((k+1)^2(k+2)^2)/4 
+									p(k_1) is true
+	Ex. 
+		P(n): 2^n < n! if n >=4
+		i) p(4): 2^4 < 4!?
+			 i.e  16 < 24? [TRUE]
+		ii) p(k): 2^k < k! k >= 4
+			prove P(k+1): < (k+1)!
+				2^k < k!
+				Multiply both sides by 2
+				2^k* < k! * 2
+				i.e 2^(k+1) < k!* 2
+					< k!(k+1) = (k+1)!
+				 2^(k+1) < (k+1)! 
+				 p(k+1) is true
+		p(n) is true for all n>= 4
+	Ex.
+		P(n): n^3 -n is divisible by 3 ᗄn >= 1
+		Proof: 
+			i) P(1): 1^3 is divisible by 3 
+				True
+			ii) P(k): k^3-k is divisible by 3
+					i.e k^3 - k = 3m for some int m 
+				P(k+1): (k+1)^3 -k is divisible by 3?
+					(k+1)^3 -k = k^3 +3k^2 +3k +1 -k
+					(k+1)^3-(k+1) = k^3 +3k^2 +3k +1 -(k+1)
+								= (k^3 -k) + 3k^2 + 3k
+								= 3m + 3(k^2 +k)
+								= 3(m + k^2 + k)
+								(k+1)^3-(k+1) is divisible by 3
+				p(k+1) is true
+		p(n) is true for all n >= 1
+	Ex.
+		P(n): if |s| = n then |P(s)| = 2^n-
+		Proof
+			i) p(0) if |s| = 0 the |p(s)| = 2^0 = 1
+				true becaue
+					if |s| = 0, then s!= 0 p(s) = {0}
+			ii) Assume if |s| = k, the p(s) = 2^k
+				prove if |T| = k + 1 then P(T) = 2^(k+1)
+				let a ∈ T and let S = T - {a} 
+	Ex.
+		P(n): [∪{i=1}^n A(i)]' = ∩{i=1}^n [A(i)]'
+		Proof 
+			i) [∪{i=1}^n A(i)]' = ∩{i=1}^1 [A(i)]'
+				i.e [A(1)] = [A(1)]' True
+			ii) assume P(k): [∪{i=1}^k A(i)]' = ∩{i=1}^k [A(i)]' 
+				P(k+1): [∪{i=1}^(k+1) A(i)]' = [∪{i=1}^k A(i) ∪ A(k+1)]'
+											= [∪{i=1}^k A(i)] ∩ [A(k+1)]'
+											= ∩{i=1}^k [A(i)]' ∩ A'(k+1) = ∩{i=1}^k [A(i)]'
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+
+------------------------------------------------------
+[5.2]
+Strong Induction & Well ordering [STRONG INDUCTION WILL BE ON EXAM]
+	Step i) verify P(5), p(6)...p(10) 
+	Step ii) assume P(5).....P(k) ᗄ k >= 10
+		then prove p(k+1) is true
+Ex. 
+	if n>1 is a int+ then n is a product of a prime number
+	proof:
+		i) Verify P(2) is true
+			2 = 2
+			Assume 2,3,4...k are products of prime numbers,
+			and prove k+1 is a product of prime
+		ii) if k+1 is prime, then done
+			else k+1 is not prime and ->
+				k+1 = a*b -> a & b are poduct of prime numbers
+					a < k+1
+					b < k+1
+					a <= k
+					b <= k
+				k+1 is a product of prime numbers
+	Mathmatical Induction
+		to prove P(n) is true ᗄn >= 1
+			step i) (basis) verify P(1) is true
+			step ii) (inductive) prove P(K) -> P(k+1) ᗄl >=1 
+	Strong Mathmatical Induction
+		Often times can be more easier than induction
+			It requires less "proof-type" thought puzzle
+		to prove P(n) is true ᗄn >= b
+		step i) verify P(b), P(b+1), P(b+z), ....P(b+j)
+		step ii) prove [P(b)∧P(b+1)∧...∧P(k)] ⟶ P(k+1) ᗄk >= b+j
+	Ex)
+		Every amount of n dollars can be formed w/ 2$ & 5$ bills if n>=4
+		Here P(n) : n = 2*a + 5*b a>= 0, b >= 0, are integers
+													ᗄn >= 4
+		prof (using strong induction)
+			i) 4 = 2*2 + 5*0
+			   5 = 2*0 + 5*1
+			ii) Assume P(4)∧P(5)∧*AP(k) ᗄk > =5)
+			we want to prove P(k+1) is true
+				i.e 4 = 2*? + 5*?
+					5 = 2*? + 5*?
+					.
+					.
+					.
+					k = 2*? + 5*?  ᗄk >= 5
+				now k+1 = (k-1) + 2 	k-1 >= 4 if k >= 5
+						= 2*m _5*2 _2 for some int m, l >=0 by assumtpion
+						=2(m+1) + 5*l m+1 >= 0, l >= 0
+				so P(k+1) is true, so P(n) is true ᗄn = 4
+	Ex) P(n) = 5n = 35a +25b ᗄn >= 24, a >=0, b >= 0
+		proof (strong induct)
+			i)  5(24) = 35*2 + 25*2
+				5(25) = 35*0 + 25*5
+				5(26) = 35*3 + 25*1
+				5(27) = 35*1 + 25*4
+				5(28) = 35*4 + 25(0)
+			ii) prove p(k+1) is true
+				i.e 
+					5*24 = 35*? + 25*?
+					.
+					.
+					.
+					5*k = 35*? + 25*?
+					ᗄk >= 28
+				prove p(k+1) is true
+					i.each	5(k+1) = 25*l + 25*m for some l>=0, m >=0
+						5(k+1)  = 5(k-4) + 25 and k-4 >= 24 if k>= 28
+								= 25*a + 25*b +25 by assumption
+								= 35*9 + 25(b+1) a >= 0, b+1 >= 0
+					so P(k+1) is true
+						p(n) is true ᗄn >= 24
+		proof (regular induction)
+			assume 5k = 35*a + 25*b a>= 0 b >=0 integers ᗄn >= 24
+			prove
+				5(k+1) = 35*l + 25*m for some l,m >= 0
+				i) a >= 2
+					the 5(k+1) = 35(a - 2) + 25(b+3)
+				ii) a <2
+					subi) a = 0
+							5(k+1) = 35(a+3) + 25(b-4)  
+									== { 25*3 = 105
+									   { 25*4 = 100
+					subii) a = 1, b >= 4
+						5(k+1) = 35(a+3) + 25(b-4)
+	Well ordering property
+		every nonempty set of nonnegative inters has a least element
+		
+		Ex. 
+		for any int a and it d > 0, thre are uniue int q & r such that 
+			a =  q*d+4 o<=r<d
+		Proof
+			Let s = {a -qd| (q∈ Z+)∧(a-1d) >= 0}
+				a = -10, d = 5
+				a - qd >= 5
+			so s has a leasy element r by a well ordering property
+			soo a - qd = r
+			a = qd + r
+			clearly r>=0 by our choice of STRONG
+			we want to prove r < d
+				suppose this is not ture, the r >= day
+					r = dq(0) + r^1
+			=> a = qd(1) + qd(0) + r(1)
+			=> a - (q + q(0))d = r(1) > 0
+				This is a contradiction that the assumption r is the smallest number
+		Now show q & r are unique
+			Contradiction (assume this is not true)
+			-> q' and r such that 
+				a = q'*d +r' - 1 0 <= r' < day
+				a = q*d + r
+				...
+------------------------------------------------------
+ Definitions
+------------------------------------------------------						
+
+------------------------------------------------------
+[5.3] Recursivity
+	Two steps define a funct w/ a set of nonnegative ints as it's domain.
+	Basis Step
+		Secify the val of the funct at 0
+	Reursive Step	
+		Gve a rule for finding the vaue of the funct at an int from its val at smaller int
+	Ex.
+		let f(n) = n^2 ᗄn >=1 
+		Define this recursively
+			f(1) = 1
+			f(n) = f(n-1) +2n + 1 n>1
+			f(n-1) = (n-1)^2  = n^2 -2n + 1
+				   = +2n - 1
+				   == n^2 = f(n)
+	Ex.
+		write f(n) = n^2 + 2n -1 n >= 1
+		Answer
+			f(1) = 2
+			f(2) = 7
+			f(n) = f(n-1) f(n-2) ᗄn > 2
+				f(n-1)^2 = (n-1)^2 + 2(n-1) -1 = n^2 - 2n+1 + 2n-2 -2
+				f(n-2)^2 = (n-2)^2 + 2(n-2) -1 = n^2 -4n +4 -2n -4 -1
+											--------------------------
+											     0+2n - 3 + 0 + 2
+												 0+2n-1 
+											f(n-1) = (n-1)^2 = n^2-2n+1 
+															= +2n-1
+															=n^2 = f(n)
+										
+	

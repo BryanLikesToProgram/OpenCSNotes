@@ -20,10 +20,10 @@
 	∅ (Empty Set) (2)
 	∪ (Union) (2) 
 	∩ (Intersection) (2)
-	'   (Comlimentary) (2)
+	'  (Comlimentary) (2)
 	⌊ ⌋ (Floor) (2)
 	⌈ ⌉ (Cealing) (2)
 	Σ (Sum) (2)
-	ℵ₀ (Contable) (2)
+	ℵ₀ (Countable) (2)
 ------------------------------------------------------
 

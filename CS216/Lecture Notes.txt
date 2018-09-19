@@ -242,3 +242,49 @@ Regular Expressions (regex)
 			\< \> (Beginning and end of a word)
 		Special Characters
 			Escape special characters w/ "\" (Otherwise terminal thinks you're calling it, not the regex expression)
+Shell Scripting
+	Simple & quick commands for complex tasks
+	Positional Arguments
+		refence them by their pos on the command line
+		~$#
+			total num of parameters
+		~$* 
+			list of all parameters used
+		~$0
+			name of the calling shell script
+		~$1-$9
+			command line args by pos entered
+		Usage
+			chmod u+x ./*
+	Syntax	
+		If statements
+			'''
+				if[ *condition ]
+					...
+				else
+					...
+				fi
+			'''
+			No {} 
+			Need spaces inside [ condition ]
+		Comparisons
+			Arethmatic
+				-lt <
+				-gt >
+				-le <=
+				-ge >=
+				-eq =
+				-ne !=
+			String
+				==
+				!=
+			Relation operators
+				||
+				&&
+		While
+			'''
+			while [ *condition ]
+			do
+				...
+			done
+			'''
