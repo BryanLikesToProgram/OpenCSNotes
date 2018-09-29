@@ -1309,5 +1309,265 @@ Ex.
 											f(n-1) = (n-1)^2 = n^2-2n+1 
 															= +2n-1
 															=n^2 = f(n)
-										
+	Ex, 
+		Fibinnocii sequence is defined as follows:
+			f(0) = 
+			f(1) =
+			f(2) = 
+		Basis Step: 5 ∈ S
+		Recusrive Step: x ∈ S, y ∈ S, => x+y ∈ S
+			S = {5,10,15,20...}
+	Ex.	
+		Σ is = {a,b,c,d,.....Z}
+		define Σ* as follows
+		Basis: λ ∈ Σ* where λ  is the empty string
+		Recursive Step: if w ∈ Σ* and x ∈ Σ
+						then wx ∈ Σ*
+					If: Σ = {0,1}
+					Then: Σ* = the set of all binary strings
+							λ ,1,0,11,01,
+	Ex.
+		Find the height of a binary tree?
+		Recursive Search?
+	Ex. Show that the set defined by the following:
+			Basis Step: 7∈S
+			Recursive Step: x∈S, y∈S => x+y∈S
+		is the set of all multiples of 7
+		
+		Proof: Structural Induction
+			let A = {7n| n ∈ Z+}
+			we want to prove A = S
+			we will prove(i) A ⊆ S
+					 and(ii) S ⊆ A-B
+			To Prove A ⊆ S:
+				i.e we want ti prove 7n ∈ S ᗄn >= 1
+				we will use induction of n
+					Basis Step: 7.1 ∈ S which is true
+					Inductive Step: Assume 7k ∈ S (1)
+							 and Prove 7(k+1) ∈ S
+				7(k+1) = 7K+7
+					∈ S because 7k ∈ S (1)
+						and 7 ∈ S (by definition of S)
+				=> 7n ∈ S  ᗄn >= 1
+				=> A  ⊆ S
+			Proof
+				to prove S ⊆ A
+					7 ∈ S (7 ∈ A, 7 = 7*1)
+				let x ∈ S and y ∈ S
+					=> x ∈ A and y ∈ A
+					=> x = 7m, y = 7l					
+					=> x+y = 7(m+l) ∈ A
+					=> S ⊆ A
+				So S = A
+[6.1]
+The Basis of Counting
+	Program
+		Procedure 1 - 5 ways
+		Procedure 2 - 3 ways
+	# ways to write this prog = 15 (3*5)
+	Ex.
+		find number of ways
+		task							# ways
+		pick a rep from a math major 	30
+		Pick a rep from a CS major		25
+		
+		Total = 30*25 = 750
+	Ex
+		find number of ways
+		task							# ways
+		pick the first bit			 	2
+		pick the second bit 				2
+		pick the third bit 				2
+		pick the fourth bit 				2
+		pick the fifth bit 				2
+		
+		Total = #ways^#tasks = 2^5
+	Ex.
+		How many different liscense plate numbers can be formed using 6 digits, 
+		non repeating using 3x digits and 3x letters
+		
+		task							# ways
+		pick the first digit			 		10
+		pick the second digit 				10
+		pick the third digit 				10
+		pick the first letter			 	26
+		pick the second leter 				26
+		pick the third letter 				26
+		
+		Total = 26^3 *10^3
+		
+	Ex.
+		Let S = {1,2,3}
+		|S| = 3
+		P(S) = {∅{1}{2}{3}{1,2}{2,3}{1,2,3}}
+		Bitstrings of length 3 = {000,001,010,011,100,101,110,111}
+		000 <- ∅
+		001 <- {3}
+		010 <- {2}
+		011 <- {2,3}
+		100 <- 
+		101
+		110
+		111
+			Let S = {a1,a2,a3,....an} so that |S| = n-
+			Let B be the set of all bit strings of length n
+		Define f: P(S) -> B as follows
+			if A = {ai1, ai2, ...aik} i1 < i2 < i3 < .... < ik
+				define f(A) = b1,b2,b3,....bn where bi = {1 if ai ∈ A
+				                                        {0 if ai ∉ A
+	Ex. Proof
+		define f: p(Z+) -> (0,1)
+		as follows 
+		each real numver in (0,1) can be represented as 0*b1*b2*b3*bn where bi = 0 or 1
+		if A={n1,n2.....nk} ⊆ Z+ (n1 < n2 < n3 ... <nk)
+			define f(A) = 0*b1*b2*b3....
+		where 
+			bn1 = bn2 = bn3 = ... = bnk = 1
+			bi = 0 if i != n; ᗄj 1 <= j <= k
+			{1, 3, 5} 	  -> 0.101010000000
+			{5, 7, 9, 10} -> 0.0000101011000001
+	Ex. How many strings of lowercase english letters are there?
+		a) that contain no vowels (a,e,i,o,u) if letters can be repeated
+		b) that contain no vowels (a,e,i,o,u) if letters cannot be repeated
+		c) that start with a vowel if letters can be repeated
+		d) that contain at least one vowel if letters cannot be repeated
+		e) that contain exactly one vowle if letters cannot be repeated
+		f) that start with x and contain atleast one vowel if letters cannot be repeated
+		g) that start with x and end with y if letters cannot be repeated
+		
+		a) 21^6
+			21*21*21*21*21*21
+		b) 21*20*19*18*17*16
+		c) 5*25*24*23*22*21
+			5 25 24...
+		d) # of strings that have no vowel
+			26^6 - 21^6
+		e) task 		#
+			place		6
+			vowel		5
+			rest 		21*20*19*18
+			
+Exam Prep
+	1 Proof using truth tables
+	2. proof using direct proof
+		i. contraposition
+		ii. contradiction
+	3. proving set identities
+		i. Truth Tables
+		ii. Others
+		Ex. 
+			prove ¬(A∩B) = ¬A∪¬B
+	4. one to one, on to, cone to correspondance
+		i. composition of function
+		ii. inverse of function
+		iii. image, preimage, range, domain, codomain
+		iv. increasing decreasing funct, strictly increasing, strictly decreasing
+		v. floor and cealing funct
+	5. countable, uncountable sets
+		i. definitions
+		ii. examples.
+		iii. proving its countable or uncountable
+			Ex. Prove a set is uncountable
+				R is countable
+				we proved (0,1) is uncountable
+				prove that the set of all even integers is countable
+				Proof: f : Z+ -> The set of all even Integers
+							1			-6
+							2			-4
+							3			-2
+							4    		2
+							5			4
+							6			6
+							7			8
+							...			...
+						defined by f(n) = { n+1 if n is odd
+										  {-n+2 if n is even
+				is a one to one correspondance
+				so the set of all even integers is countable
+	6. Induction				
+		i. proof using mathmatical induction
+		ii. proof using generalized strong induction
+	7. recursion
+		i. recursive definition of a funct
+		ii. check if a given funct is well defined
+		iii. rewrite functions as recursive
+			Ex. f(n) = n^2 if n >=1 
+				f(1) = 1
+				f(n) = f(n+1)
+					f(n-1) = (n-1)^2
+						   = n^2 - 2n + 1
+				f(n) = f(n-1) + 2n-1 if n > 1
+	8. Product Rule
+		i. Know usage of Product, Sum rule and Inclusion-exclusion principle to solve counting problems
+		
+News
+	Reimann Hypothesis
 	
+Ex.
+	A store offers 15$ and 20$ gift cirtificants
+	prove that you can buy gift cirtificants for any amount of 5n dollars if n>= ?
+																		25
+																		30 = 20*0 + 15*2
+																		35 = 20*1 + 15*1
+																		40 = 20*2 + 15*0
+																		n >= 6
+	Problem
+		P(n): 5n = 15x + 20y for some non-negative integers x,y if n >= 6
+		P(6) = 5*6 = 2*15 + 20*0
+		P(7) = 5*7 = 1*15 + 20*1
+		P(8) = 5*8 = 0*15 + 20*2
+		P(9) = 45 = 3*15 + 20*0
+		
+	Inductive Step
+		Assume P(6) ∧ P(7) P(8)...P(K)
+		Prove P(k+1) is true 
+			P(k+1) = 5(k+1) = 15*9 + 20*b 
+					 5(k+1) = 5(k-2) + 15 k >=9
+						=> k - 2 >= 7
+							= 15l + 20k for some l, k >=0 by our assumption
+						So P(k+1) is true
+							so P(n) is true fir all n >=6 
+		The right way to prove^
+		The wrong way to prove v
+			5(k+1) = 5(k-5) + 30
+			5k+5 = 5k -25 + 30
+			so 5(k+1) = 15*a + 20*b + 30 
+			DO NOT DO 
+
+[6.3]
+Permutation and Combination
+	Definition:
+	
+	P(n,r) = the number of r-permutation of n objects
+	1,2,3,........,n
+	_n_ _(n+)_ _(n-2)_ ___ _(n-r+1)_
+	 1	 2	     3	   4	...	r
+	
+	How many permutations of the string ABCDEFG 
+	contain the string AB
+		p(n,r) = n(n-1)(n-2)....(n-r+1)
+			   = (n!)/(n-r)!
+		p(n,n) = n(n-1) .... (n-n+1)
+			   = n!
+		--------------
+		Answer 
+			Treat AB as one char
+			P(6,6) = 6!
+	How many ways are there to select a first prize winner, a second and thrid prize winner 
+	from a set of 25 people
+	Answer
+		P(25, 3)
+	You have 1 pictures but 3 spots, how many ways can you organize pictures
+	Answer
+		P(10,3)
+	
+	c(n,4) the number of r-combinations of n objects
+		= p(n,r)/r!
+		= n!/((n-r)!r!)
+		
+	A coin is flipped 10x(times), how many possible outcomes?
+		i are there total
+		ii contain 3 eads
+		iii con
+					 
+					

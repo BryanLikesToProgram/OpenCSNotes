@@ -1,0 +1,105 @@
+Switch Basics
+	
+
+Gate Basics
+	NOT Gate
+	
+	AND Gate
+	
+	OR Gate
+	
+	XOR Gate
+	
+	NAND Gate
+	
+	NOR Gate
+	
+Functional Blocks
+	Output is determined by input, diregard internals (Black Box)
+	
+Perfect Numbers
+	Positive integer that is equal to the sum of its integer divisors
+	Ex.
+		6: 1+2+3= 6 | 1*2*3 = 6
+		28 1+2+4+7+14= 28 |1*2*14= 28 | 1*4*7 = 28
+Number Systems
+    +-------------------------------------------------------+
+	|Base	|16        |10		|8		   |2				|
+	|Name	|hex	   |decimal |octal	   |binary			|
+	|Use	|shorthand |ours	    |shorthand |computer (ours)  |
+	|Values |0-9 A-F   |0-9		|0-7	   |0-1				|
+	+-------------------------------------------------------+
+	
+	Decimal
+		d_2d_1d_0
+		"D" can be found by the equition
+		D = d_2*10^2 + d_1*10^1 +d_0*10^0
+		
+		For a Base 10 (decimal) of base 10, and digits d_i are 0 through 9
+			d_(p-1)*d_(p02)......d_0
+		The value of D is 
+			D = Σ_(i=0)^(p-1)
+	Base 2 
+		For a Base 2 (binary) of base 2 and digits d_i are 0 through 1
+			b_(p-1)*b_(p-2)...b_0
+		The value of B is 
+			B = Σ_(i=0)^(p-1) bi * 2^i
+	Unsigned Binary to Decimal Conversion
+		___ ___ ___ ___ ___ ___ ___ ___
+		128 64  32  16   8   4   2   1
+		
+		foreach 1 in the binary number, add power to the total
+		ex.
+			(10100001)_2 
+			
+			_1_ _0_ _1_ _0_ _0_ _0_ _0_ _1_
+			128 64  32  16   8   4   2   1
+			= 128 +32 + 1 = (161)_10
+	Unsigned Decimal to Binary Conversion
+		Successive Division 
+						    Remainder
+			161 / 2 = 80	1		    |
+			80 / 2 = 40     0			|
+			40 / 2 = 20     0			|
+			20 / 2 = 10	    0			|
+			10 / 2 = 5 		0			|
+			5 / 2 = 2		1			|
+			2 / 2 = 1 		0			|
+			1 / 2 = 0 		1 		    V
+			
+			10100001
+			
+		Decreasing Power of 2
+							Place	Value
+		161 - 256 = !		256		0		^
+		161 - 128 = 33		128		1		|
+		33 - 64 = !			64 		0		|
+		33 - 32 = 1			32		1		|
+		1 - 16 = !			16		0		|
+		1 - 8 = !			8		0		|
+		1 - 4 = !			4	    0		|
+		1 - 2 = !			2		0		|
+		1 - 1 = 0 			1		1		|
+Switches
+	Basic Switch
+		Open 
+		   /
+		-o/  o-
+		
+		Closed
+		-o--o-
+		
+		Basic Circuit Symbol
+		-|S|-
+		  ^x
+		  
+		Example Circuit
+			   |					  LED
+		Battery| | -------|S|-------->|------GND
+		  VCC  |
+		  
+		  
+		
+		
+			
+		

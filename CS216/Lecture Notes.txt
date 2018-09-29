@@ -256,6 +256,11 @@ Shell Scripting
 			command line args by pos entered
 		Usage
 			chmod u+x ./*
+	Run Arguments
+		~ -x
+			runs in debug
+		~ -i 
+			runs in interactive mode
 	Syntax	
 		If statements
 			'''
@@ -288,3 +293,14 @@ Shell Scripting
 				...
 			done
 			'''
+		For 
+			'''
+			for f in $(*unix command)
+				do
+					...
+				done
+			'''
+			or
+			'''
+			for f in {start..end}
+			
